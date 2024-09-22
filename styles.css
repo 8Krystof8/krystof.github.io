@@ -1,4 +1,4 @@
-/* Base body styles with gradient background */
+/* Base body styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -9,20 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Responsiveness */
-@media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
-    h2 {
-        font-size: 24px;
-    }
-    p {
-        font-size: 16px;
-    }
-}
-
-/* Header with slow rainbow gradient from left to right */
+/* Header with simple gradient effect */
 header {
     padding: 50px 0;
     position: relative;
@@ -31,7 +18,7 @@ header {
 h1 {
     font-size: 48px;
     background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00, #00ff00, #0000ff, #ff00ff);
-    background-size: 600%;
+    background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: rainbow-slow 10s linear infinite;
@@ -42,100 +29,67 @@ p {
     color: #ccc;
 }
 
-/* Slow and smooth rainbow transition */
+/* Slow gradient transition for the title */
 @keyframes rainbow-slow {
     0% { background-position: 0%; }
     100% { background-position: 100%; }
 }
 
-/* Section styles with spacing */
+/* Section styling */
 section {
     padding: 60px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Footer */
+/* Projects section, simple layout */
+#projects p {
+    color: #999;
+    font-style: italic;
+}
+
+/* Footer with Earth and minimalistic design */
 footer {
     padding: 20px;
     background-color: #151515;
-    position: fixed;
+    position: relative;
+}
+
+.footer-content {
+    position: relative;
     width: 100%;
-    bottom: 0;
-}
-
-/* Detailed planets, black holes, galaxies, orbits */
-.space-object {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle at 50% 50%, #ff6600, #d35400);
-    animation: float-slow 30s ease-in-out infinite;
-    z-index: -1;
-}
-
-.planet {
-    background: radial-gradient(circle at 50% 50%, #ff6600, #d35400);
-}
-
-.blackhole {
-    background: radial-gradient(circle at 50% 50%, #000000, #434343);
-}
-
-.galaxy {
-    background: radial-gradient(circle at 50% 50%, #bb33ff, #6622aa);
-}
-
-.orbit {
-    border: 1px dashed #ffffff;
-    border-radius: 50%;
-}
-
-/* Animating the space objects with slow movement */
-@keyframes float-slow {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    50% {
-        transform: translate(20px, 30px) scale(1.1);
-    }
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-}
-
-/* Planetary positions */
-.planet1 {
-    width: 150px;
-    height: 150px;
-    top: 10%;
-    left: 15%;
-}
-
-.planet2 {
-    width: 100px;
     height: 100px;
-    top: 60%;
-    left: 70%;
+    overflow: hidden;
 }
 
-.blackhole {
+.footer-earth {
+    position: absolute;
     width: 120px;
     height: 120px;
-    top: 40%;
-    left: 50%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, #2f4f4f, #1c1c1c);
+    top: -20px;
+    left: 40%;
+    animation: earth-spin 50s linear infinite;
 }
 
-.galaxy {
-    width: 200px;
-    height: 200px;
-    top: 20%;
-    left: 80%;
+@keyframes earth-spin {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
 }
 
-.orbit {
-    width: 300px;
-    height: 300px;
-    top: 50%;
-    left: 25%;
-    animation-duration: 50s;
-    animation-timing-function: linear;
+/* Responzivita */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 16px;
+    }
 }
