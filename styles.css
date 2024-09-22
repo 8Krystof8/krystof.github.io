@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Header with simple gradient effect */
+/* Header with smoother and slower rainbow effect */
 header {
     padding: 50px 0;
     position: relative;
@@ -17,11 +17,11 @@ header {
 
 h1 {
     font-size: 48px;
-    background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00, #00ff00, #0000ff, #ff00ff);
-    background-size: 200%;
+    background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    background-size: 500%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbow-slow 10s linear infinite;
+    animation: rainbow-slow 20s linear infinite;
 }
 
 p {
@@ -29,7 +29,7 @@ p {
     color: #ccc;
 }
 
-/* Slow gradient transition for the title */
+/* Smooth and slow rainbow gradient transition */
 @keyframes rainbow-slow {
     0% { background-position: 0%; }
     100% { background-position: 100%; }
@@ -41,13 +41,13 @@ section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Projects section, simple layout */
+/* Projects section placeholder */
 #projects p {
     color: #999;
     font-style: italic;
 }
 
-/* Footer with Earth and minimalistic design */
+/* Footer with subtle Earth animation */
 footer {
     padding: 20px;
     background-color: #151515;
@@ -73,15 +73,44 @@ footer {
 }
 
 @keyframes earth-spin {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(10px);
-    }
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
 }
 
-/* Responzivita */
+/* Space objects with slower animation */
+.space-object {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, #ff6600, #d35400);
+    animation: float-slow 50s ease-in-out infinite;
+    z-index: -1;
+}
+
+.planet {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 50% 50%, #ff6600, #d35400);
+}
+
+.blackhole {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 50% 50%, #000000, #434343);
+}
+
+.galaxy {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at 50% 50%, #bb33ff, #6622aa);
+}
+
+@keyframes float-slow {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -20px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Mobile optimization: fewer moving objects */
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 28px;
@@ -91,5 +120,9 @@ footer {
     }
     p {
         font-size: 16px;
+    }
+    
+    .space-object {
+        display: none; /* Hides space objects on small screens for simplicity */
     }
 }
