@@ -1,58 +1,87 @@
-/* Základní styly */
+/* Basic styles for body and elements */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #0d0d0d;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-/* Hlavička */
+/* Header styling */
 header {
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 2rem;
+    padding: 50px 0;
+    background-color: #151515;
 }
 
-/* Navigace */
+h1, h2, p {
+    margin: 0 0 20px;
+}
+
+/* Navigation bar */
 nav ul {
-    list-style: none;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    margin: 20px 0;
+    background-color: #222;
 }
 
-nav li {
-    margin: 0 1rem;
+nav ul li {
+    margin: 0 15px;
 }
 
-/* Sekce O mně */
-#about-me {
-    padding: 2rem;
-    text-align: center;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-/* Sekce Projekty */
-#projects {
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+nav ul li a:hover {
+    color: #00aaff;
 }
 
-/* Karty projektů */
-.project-card {
-    width: 300px;
-    margin: 1rem;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    text-align: center;
+/* Sections styling */
+section {
+    padding: 50px 0;
 }
 
-/* Patička */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 2rem;
+    padding: 20px;
+    background-color: #151515;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Animating the stars */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    animation: star-move 10s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes star-move {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
 }
