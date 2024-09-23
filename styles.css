@@ -9,10 +9,10 @@ body {
     overflow-x: hidden;
 }
 
-/* Header styles */
+/* Clean gradient transitions between sections */
 header {
     padding: 60px 0;
-    background: linear-gradient(90deg, #2b2b2b, #1b1b1b);
+    background: linear-gradient(180deg, #0d0d0d 0%, #1f1f1f 100%);
 }
 
 h1 {
@@ -33,25 +33,22 @@ p {
     color: #ccc;
 }
 
-/* Section styling */
+/* Clean, smooth transitions */
 section {
     padding: 80px 20px;
-}
-
-#about {
-    background-color: #1a1a2e; /* Dark navy blue */
+    background: linear-gradient(180deg, #1a1a2e 0%, #2c2c3a 100%);
 }
 
 #skills {
-    background-color: #161625; /* Dark purple */
+    background: linear-gradient(180deg, #161625 0%, #2b2b38 100%);
 }
 
 #projects {
-    background-color: #0f0f1a; /* Dark blue */
+    background: linear-gradient(180deg, #0f0f1a 0%, #222233 100%);
 }
 
 #contact {
-    background-color: #121212; /* Dark grey */
+    background: linear-gradient(180deg, #121212 0%, #242424 100%);
 }
 
 /* Footer */
