@@ -8,31 +8,50 @@ burger.addEventListener('click', () => {
     burger.classList.toggle('toggle');
 });
 
-// Animace při scrollování
-const skills = document.querySelectorAll('.skill-progress span');
-
-window.addEventListener('scroll', () => {
-    let skillsSection = document.querySelector('.skills').offsetTop;
-    let screenPosition = window.innerHeight + window.scrollY;
-
-    if (screenPosition > skillsSection) {
-        skills.forEach(skill => {
-            let skillLevel = skill.style.width;
-            skill.style.width = skill.getAttribute('style').match(/width:\s*(\d+%)/)[1];
-        });
-    }
-});
-
 // Hladké scrollování
 const navLinksItems = document.querySelectorAll('.nav-links a');
 
 navLinksItems.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-        navLinks.classList.remove('nav-active');
-        burger.classList.remove('toggle');
+        if (link.hash !== "") {
+            e.preventDefault();
+            const hash = link.hash;
+
+            document.querySelector(hash).scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            navLinks.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+        }
     });
+});
+
+// Dark Mode Toggle
+const toggleSwitch = document.getElementById('darkModeToggle');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.body.classList.add(currentTheme);
+
+    if (currentTheme === 'light-mode') {
+        toggleSwitch.checked = true;
+    }
+}
+
+toggleSwitch.addEventListener('change', () => {
+    document.body.classList.toggle('light-mode');
+
+    let theme = 'dark-mode';
+    if (document.body.classList.contains('light-mode')) {
+        theme = 'light-mode';
+    }
+    localStorage.setItem('theme', theme);
+});
+
+// Inicializace AOS
+AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true
 });
