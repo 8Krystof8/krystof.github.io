@@ -1,57 +1,74 @@
-// Burger Menu
-const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
+// ... předchozí kód ...
 
-burger.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-active');
-    // Animace burgeru
-    burger.classList.toggle('toggle');
-});
+// Validace formuláře
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    let valid = true;
+    const name = this.jmeno.value.trim();
+    const email = this.email.value.trim();
+    const message = this.zprava.value.trim();
 
-// Hladké scrollování
-const navLinksItems = document.querySelectorAll('.nav-links a');
-
-navLinksItems.forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (link.hash !== "") {
-            e.preventDefault();
-            const hash = link.hash;
-
-            document.querySelector(hash).scrollIntoView({
-                behavior: 'smooth'
-            });
-
-            navLinks.classList.remove('nav-active');
-            burger.classList.remove('toggle');
-        }
-    });
-});
-
-// Dark Mode Toggle
-const toggleSwitch = document.getElementById('darkModeToggle');
-const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme) {
-    document.body.classList.add(currentTheme);
-
-    if (currentTheme === 'light-mode') {
-        toggleSwitch.checked = true;
+    if (name === '') {
+        alert('Prosím, zadejte své jméno.');
+        valid = false;
     }
+    if (email === '' || !validateEmail(email)) {
+        alert('Prosím, zadejte platný email.');
+        valid = false;
+    }
+    if (message === '') {
+        alert('Prosím, napište zprávu.');
+        valid = false;
+    }
+    if (!valid) {
+        e.preventDefault();
+    }
+});
+
+function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
 }
 
-toggleSwitch.addEventListener('change', () => {
-    document.body.classList.toggle('light-mode');
+// Optimalizace výkonu: Minifikace souborů
+// Pro minifikaci můžete použít nástroje jako Terser pro JavaScript a csso-cli pro CSS
+// Například: npx terser script.js -o dist/script.min.js
+//            npx csso styles.css -o dist/styles.min.css
 
-    let theme = 'dark-mode';
-    if (document.body.classList.contains('light-mode')) {
-        theme = 'light-mode';
+// Lazy Loading obrázků
+const images = document.querySelectorAll('img');
+
+const options = {
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+function handleImg(myImg, observer) {
+    myImg.forEach(myImgSingle => {
+        if (myImgSingle.isIntersecting) {
+            myImgSingle.target.src = myImgSingle.target.getAttribute('data-src');
+            observer.unobserve(myImgSingle.target);
+        }
+    });
+}
+
+const observer = new IntersectionObserver(handleImg, options);
+
+images.forEach(img => {
+    observer.observe(img);
+});
+
+// Navigační lišta skrývání/přidání
+let lastScrollTop = 0;
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.classList.add('hidden');
+    } else {
+        navbar.classList.remove('hidden');
     }
-    localStorage.setItem('theme', theme);
+    lastScrollTop = scrollTop;
 });
 
-// Inicializace AOS
-AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true
-});
+// ... zbytek kódu ...
