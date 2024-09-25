@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $prijemce = "vas-email@example.com";
+    $prijemce = "vachkrystof@gmail.com";
     $predmet = "Nová zpráva od $jmeno";
     $obsah = "Jméno: $jmeno\n";
     $obsah .= "Email: $email\n\n";
