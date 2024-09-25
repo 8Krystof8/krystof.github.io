@@ -1,3 +1,6 @@
+/* Import fontu */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
 /* Reset stylů */
 * {
     margin: 0;
@@ -7,26 +10,35 @@
 
 /* Tělo stránky */
 body {
-    background-color: #121212;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #1a1a1a;
     color: #e0e0e0;
-    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
 }
 
-/* Navigační lišta */
+/* Navigace */
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #0d0d0d;
+    padding: 0 50px;
     position: fixed;
-    top: 0;
     width: 100%;
-    background-color: #0a0a0a;
-    padding: 15px 0;
+    z-index: 100;
     border-bottom: 1px solid #333;
-    z-index: 1000;
+}
+
+.logo {
+    color: #e0e0e0;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
 }
 
 .nav-links li {
@@ -41,59 +53,281 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #b30000;
+    color: #ff4d4d;
 }
 
-/* Sekce */
-.section {
-    min-height: 100vh;
-    padding: 100px 20px 60px 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease-in-out;
+/* Burger Menu pro mobilní zařízení */
+.burger {
+    display: none;
+    cursor: pointer;
 }
 
-.section h1, .section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #e0e0e0;
+    margin: 5px;
+    transition: all 0.3s ease;
 }
 
-.section p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
+/* Hero Sekce */
+.hero {
+    height: 100vh;
+    background-image: url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-/* Animace pro načítání sekcí */
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Styl pro tmavý a ponurý vzhled */
-body::before {
+.hero::before {
     content: '';
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('background.jpg'); /* Přidejte cestu k vašemu obrázku */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.1;
-    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Odkazy v textu */
-a {
-    color: #f39c12;
+.hero-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #e0e0e0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #e0e0e0;
+    border: 2px solid #e0e0e0;
     text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-a:hover {
-    text-decoration: underline;
+.btn:hover {
+    background-color: #e0e0e0;
+    color: #1a1a1a;
+}
+
+/* Sekce O mně */
+.about {
+    padding: 100px 50px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-content img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 20px;
+    object-fit: cover;
+    border: 5px solid #333;
+}
+
+.about-content p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px;
+    animation: slideInRight 1s ease-in-out;
+}
+
+/* Projekty */
+.projects {
+    padding: 100px 50px;
+    background-color: #141414;
+    text-align: center;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-item {
+    background-color: #1f1f1f;
+    margin: 20px;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #333;
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.project-item h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.project-item p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Dovednosti */
+.skills {
+    padding: 100px 50px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.skills-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-bar {
+    margin: 20px 0;
+}
+
+.skill-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.skill-progress {
+    background-color: #333;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress span {
+    display: block;
+    height: 100%;
+    background-color: #ff4d4d;
+    width: 0;
+    animation: loadSkill 2s forwards;
+}
+
+@keyframes loadSkill {
+    to {
+        width: var(--skill-level);
+    }
+}
+
+/* Kontakt */
+.contact {
+    padding: 100px 50px;
+    background-color: #141414;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #e0e0e0;
+}
+
+.contact button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff4d4d;
+    color: #e0e0e0;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #e60000;
+}
+
+/* Footer */
+footer {
+    background-color: #0d0d0d;
+    padding: 20px 0;
+    text-align: center;
+    color: #666;
+}
+
+/* Animace */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responzivní design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #0d0d0d;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        border-left: 1px solid #333;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
 }
