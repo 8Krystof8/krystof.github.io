@@ -1,12 +1,15 @@
+/* Tělo stránky s pozadím a gradientem */
 body {
-  background-color: #f0f0f0;
+  background: linear-gradient(180deg, #2c3e50, #bdc3c7);
   font-family: Arial, sans-serif;
+  color: white;
   margin: 0;
   padding: 0;
 }
 
+/* Navigační lišta */
 nav {
-  background-color: #1c1c1c;
+  background-color: transparent;
   padding: 1rem;
 }
 
@@ -14,44 +17,110 @@ nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 nav ul li {
   display: inline;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 nav ul li a {
-  color: white;
+  color: #ecf0f1;
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
+nav ul li a:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+/* Hlavní obsah s trochou průhlednosti */
 main {
-  padding: 2rem;
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Sekce s jemným odsazením a sjednoceným vzhledem */
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 h2 {
-  color: #333;
+  color: #ecf0f1;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
+p, ul {
+  color: #ecf0f1;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Obrázky s jemným zaoblením */
 img {
+  display: block;
   width: 100%;
   height: auto;
-  margin-top: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
 }
 
+/* Tlačítka ve formuláři */
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
-  background-color: #1c1c1c;
-  color: white;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
 }
 
 footer a {
-  color: white;
+  color: #3498db;
   text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
