@@ -1,10 +1,11 @@
-/* Tělo stránky s jemnějším gradientním pozadím */
+/* Celé tělo s gradientním pozadím */
 body {
   background: linear-gradient(180deg, #1c1c1c, #2c3e50, #bdc3c7);
   font-family: Arial, sans-serif;
   color: white;
   margin: 0;
   padding: 0;
+  min-height: 100vh; /* Zajištění, aby se pozadí táhlo přes celou výšku stránky */
 }
 
 /* Navigační lišta */
@@ -37,14 +38,14 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Hlavní obsah s větší šířkou a bez ohraničení sekcí */
+/* Hlavní obsah s centrálním zarovnáním */
 main {
   padding: 3rem 2rem;
   max-width: 1000px;
   margin: auto;
 }
 
-/* Sekce sjednocené bez rozdělení */
+/* Sekce jsou sjednocené, bez rozdělení */
 section {
   margin-bottom: 3rem;
   text-align: center;
@@ -111,15 +112,14 @@ button:hover {
   background-color: #2980b9;
 }
 
-/* Footer */
-/* Footer */
+/* Minimalistický footer */
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.7); /* Tmavší pozadí pro výrazný kontrast */
   color: #ecf0f1;
   font-size: 0.9rem;
-  position: relative;
+  background-color: transparent; /* Odstranění odděleného spodního pozadí */
+  margin-top: auto;
   bottom: 0;
   width: 100%;
 }
@@ -132,23 +132,4 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
-
-footer p {
-  margin: 0.5rem 0;
-}
-
-footer .socials {
-  margin-top: 0.5rem;
-}
-
-footer .socials a {
-  display: inline-block;
-  margin: 0 0.5rem;
-  color: #ecf0f1;
-  text-decoration: none;
-}
-
-footer .socials a:hover {
-  color: #3498db;
 }
