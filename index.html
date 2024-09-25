@@ -1,72 +1,40 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Krystof's Personal Web</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Osobní Web</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><strong>Krystof's Web</strong></li>
-    </ul>
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#domu">Domů</a></li>
+            <li><a href="#o-mne">O mně</a></li>
+            <li><a href="#projekty">Projekty</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
 
-  <main>
-    <!-- About Me Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hello! I am Krystof, a passionate developer with a love for creating beautiful web experiences.</p>
-      <img src="https://source.unsplash.com/random/800x600/?developer" alt="Developer Image">
+    <section id="domu" class="section">
+        <h1>Vítejte</h1>
+        <p>Jsem 17letý vývojář s vášní pro programování.</p>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Web Development (HTML, CSS, JavaScript)</li>
-        <li>Back-end Development (Node.js, Python)</li>
-        <li>Database Management (SQL, MongoDB)</li>
-      </ul>
-      <img src="https://source.unsplash.com/random/800x600/?coding" alt="Coding Image">
+    <section id="o-mne" class="section">
+        <h2>O mně</h2>
+        <p>Něco málo o mně...</p>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="#">Project 1</a> - A web application built using React.</li>
-        <li><a href="#">Project 2</a> - A Node.js backend for a mobile app.</li>
-        <li><a href="#">Project 3</a> - An e-commerce website using Python and Django.</li>
-      </ul>
-      <img src="https://source.unsplash.com/random/800x600/?project" alt="Projects Image">
+    <section id="projekty" class="section">
+        <h2>Moje Projekty</h2>
+        <p>Zde jsou některé z mých projektů.</p>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <button type="submit">Send</button>
-      </form>
+    <section id="kontakt" class="section">
+        <h2>Kontakt</h2>
+        <p>Můžete mě kontaktovat na <a href="mailto:email@example.com">email@example.com</a>.</p>
     </section>
-  </main>
 
- <footer>
-  <p>&copy; 2024 Krystof's Personal Web</p>
-  <div class="socials">
-    <a href="mailto:krystof@example.com">Email</a> |
-    <a href="https://www.linkedin.com/in/krystof" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/krystof" target="_blank">GitHub</a>
-  </div>
-</footer>
+    <script src="script.js"></script>
 </body>
 </html>
