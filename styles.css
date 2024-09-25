@@ -28,22 +28,16 @@ body {
 /* Navigace */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 80px;
-    background: rgba(13, 13, 13, 0.9);
+    background: rgba(13, 13, 13, 0.8);
     backdrop-filter: blur(5px);
     padding: 0 50px;
     position: fixed;
     width: 100%;
     z-index: 999;
     border-bottom: 1px solid #333;
-}
-
-nav .logo {
-    color: var(--accent-color);
-    font-size: 28px;
-    font-weight: bold;
 }
 
 nav .nav-links {
@@ -70,6 +64,8 @@ nav .nav-links a:hover {
 .burger {
     display: none;
     cursor: pointer;
+    position: absolute;
+    right: 20px;
 }
 
 .burger div {
@@ -120,12 +116,6 @@ nav .nav-links a:hover {
 .hero h1 .highlight {
     color: var(--accent-color);
     animation: textGlow 2s ease-in-out infinite alternate;
-}
-
-.hero p {
-    font-size: 24px;
-    margin-bottom: 30px;
-    font-weight: 300;
 }
 
 .btn {
@@ -206,6 +196,7 @@ nav .nav-links a:hover {
 .about p {
     font-size: 18px;
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 /* Projekty */
@@ -369,6 +360,7 @@ footer {
     text-align: center;
     color: #666666;
     overflow: hidden;
+    padding-top: 50px;
 }
 
 .footer-content {
@@ -380,7 +372,7 @@ footer {
 .footer-image {
     width: 100%;
     height: auto;
-    opacity: 0.1;
+    opacity: 0.2;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -389,6 +381,7 @@ footer {
 footer p {
     position: relative;
     z-index: 2;
+    margin-top: 20px;
 }
 
 /* Animace */
