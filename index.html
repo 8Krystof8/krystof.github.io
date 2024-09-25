@@ -2,39 +2,107 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Osobní Web</title>
+    <title>Osobní Web - 17letý Vývojář</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link na styly -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Fonty -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigace -->
     <nav>
+        <div class="logo">MůjWeb</div>
         <ul class="nav-links">
             <li><a href="#domu">Domů</a></li>
             <li><a href="#o-mne">O mně</a></li>
             <li><a href="#projekty">Projekty</a></li>
+            <li><a href="#dovednosti">Dovednosti</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </nav>
 
-    <section id="domu" class="section">
-        <h1>Vítejte</h1>
-        <p>Jsem 17letý vývojář s vášní pro programování.</p>
+    <!-- Hero Sekce -->
+    <section id="domu" class="hero">
+        <div class="hero-content">
+            <h1>Vítejte v mém světě</h1>
+            <p>Mladý vývojář s vášní pro tvorbu webů a programování.</p>
+            <a href="#projekty" class="btn">Moje Projekty</a>
+        </div>
     </section>
 
-    <section id="o-mne" class="section">
+    <!-- O mně -->
+    <section id="o-mne" class="about">
         <h2>O mně</h2>
-        <p>Něco málo o mně...</p>
+        <div class="about-content">
+            <img src="images/profile.jpg" alt="Moje Fotografie">
+            <p>Jsem 17letý kluk s vášní pro programování. Baví mě vytvářet webové stránky a aplikace, které jsou nejen funkční, ale i esteticky příjemné. Ve svém volném čase se věnuji učení nových technologií a zdokonalování svých dovedností.</p>
+        </div>
     </section>
 
-    <section id="projekty" class="section">
+    <!-- Projekty -->
+    <section id="projekty" class="projects">
         <h2>Moje Projekty</h2>
-        <p>Zde jsou některé z mých projektů.</p>
+        <div class="projects-grid">
+            <div class="project-item">
+                <img src="images/project1.jpg" alt="Projekt 1">
+                <h3>Název Projektu 1</h3>
+                <p>Krátký popis projektu. Co dělá, jaké technologie byly použity.</p>
+                <a href="#" class="btn">Více Info</a>
+            </div>
+            <div class="project-item">
+                <img src="images/project2.jpg" alt="Projekt 2">
+                <h3>Název Projektu 2</h3>
+                <p>Krátký popis projektu. Co dělá, jaké technologie byly použity.</p>
+                <a href="#" class="btn">Více Info</a>
+            </div>
+            <!-- Přidejte další projekty podle potřeby -->
+        </div>
     </section>
 
-    <section id="kontakt" class="section">
-        <h2>Kontakt</h2>
-        <p>Můžete mě kontaktovat na <a href="mailto:email@example.com">email@example.com</a>.</p>
+    <!-- Dovednosti -->
+    <section id="dovednosti" class="skills">
+        <h2>Moje Dovednosti</h2>
+        <div class="skills-content">
+            <div class="skill-bar">
+                <div class="skill-title">HTML</div>
+                <div class="skill-progress"><span style="width: 90%;"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-title">CSS</div>
+                <div class="skill-progress"><span style="width: 85%;"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-title">JavaScript</div>
+                <div class="skill-progress"><span style="width: 75%;"></span></div>
+            </div>
+            <!-- Přidejte další dovednosti podle potřeby -->
+        </div>
     </section>
 
+    <!-- Kontakt -->
+    <section id="kontakt" class="contact">
+        <h2>Kontaktujte mě</h2>
+        <form action="#" method="post">
+            <input type="text" name="jmeno" placeholder="Vaše Jméno" required>
+            <input type="email" name="email" placeholder="Váš Email" required>
+            <textarea name="zprava" rows="5" placeholder="Vaše Zpráva" required></textarea>
+            <button type="submit" class="btn">Odeslat</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 MůjWeb. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- Skript -->
     <script src="script.js"></script>
 </body>
 </html>
