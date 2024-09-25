@@ -3,32 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Projekty - Vesmírný Web</title>
-    <meta name="description" content="Prozkoumejte projekty plné inovací a vesmírné inspirace od Kryštofa Vacha.">
-    <meta name="keywords" content="projekty, vývojář, vesmír, technologie">
+    <meta name="description" content="Prozkoumejte projekty Kryštofa, včetně jeho nejnovějšího projektu Tribity.">
+    <meta name="keywords" content="Kryštof, projekty, Tribity, technologie">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Open Graph Meta Tagy -->
-    <meta property="og:title" content="Vesmírný Web - Projekty">
-    <meta property="og:description" content="Prozkoumejte projekty plné inovací a vesmírné inspirace od Kryštofa Vacha.">
-    <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://vase-domena.cz/projects.html">
-    <meta property="og:type" content="website">
     <!-- Link na styly -->
     <link rel="stylesheet" href="styles.css">
     <!-- AOS Animace -->
     <link rel="stylesheet" href="aos/aos.css">
     <!-- Fonty -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Přepínač Dark Mode -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider round"></span>
-        </label>
-    </div>
-
     <!-- Navigace -->
     <nav id="navbar">
         <div class="logo">Vesmírný Web</div>
@@ -49,16 +35,10 @@
     <section class="projects">
         <h2 data-aos="fade-right">Moje Projekty</h2>
         <div class="projects-grid">
-            <div class="project-item" data-aos="zoom-in">
-                <img src="images/project1.jpg" alt="Projekt Galaktický Průvodce">
-                <h3>Galaktický Průvodce</h3>
-                <p>Interaktivní aplikace pro objevování naší galaxie prostřednictvím vizuálních efektů a informací.</p>
-                <a href="#" class="btn">Více Info</a>
-            </div>
-            <div class="project-item" data-aos="zoom-in">
-                <img src="images/project2.jpg" alt="Projekt Kosmická Kalkulačka">
-                <h3>Kosmická Kalkulačka</h3>
-                <p>Nástroj pro výpočty vesmírných vzdáleností a času potřebného k cestování mezi planetami.</p>
+            <div class="project-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/tribity.jpg" alt="Tribity" loading="lazy">
+                <h3>Tribity</h3>
+                <p>Tribity je můj nejnovější projekt zaměřený na...</p>
                 <a href="#" class="btn">Více Info</a>
             </div>
             <!-- Přidejte další projekty podle potřeby -->
@@ -67,7 +47,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Vesmírný Web. Všechna práva vyhrazena.</p>
+        <div class="footer-content">
+            <img src="images/earth.jpg" alt="Země" class="footer-image">
+            <p>&copy; 2023 Kryštof Vach. Všechna práva vyhrazena.</p>
+        </div>
     </footer>
 
     <!-- Skripty -->
