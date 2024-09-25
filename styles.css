@@ -1,6 +1,6 @@
-/* Tělo stránky s pozadím a gradientem */
+/* Tělo stránky s jemnějším gradientním pozadím */
 body {
-  background: linear-gradient(180deg, #2c3e50, #bdc3c7);
+  background: linear-gradient(180deg, #1c1c1c, #2c3e50, #bdc3c7);
   font-family: Arial, sans-serif;
   color: white;
   margin: 0;
@@ -11,13 +11,14 @@ body {
 nav {
   background-color: transparent;
   padding: 1rem;
+  text-align: center;
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  display: inline-block;
 }
 
 nav ul li {
@@ -36,34 +37,28 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Hlavní obsah s trochou průhlednosti */
+/* Hlavní obsah s větší šířkou a bez ohraničení sekcí */
 main {
   padding: 3rem 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
 }
 
-/* Sekce s jemným odsazením a sjednoceným vzhledem */
+/* Sekce sjednocené bez rozdělení */
 section {
   margin-bottom: 3rem;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  text-align: center;
 }
 
 h2 {
   color: #ecf0f1;
-  text-align: center;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
-  font-size: 2rem;
 }
 
 p, ul {
   color: #ecf0f1;
   font-size: 1.1rem;
-  text-align: center;
 }
 
 ul {
@@ -84,16 +79,25 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Obrázky s jemným zaoblením */
+/* Obrázky se zarovnáním a menšími okraji */
 img {
   display: block;
-  width: 100%;
+  width: 60%;
   height: auto;
-  margin: 1rem 0;
+  margin: 1.5rem auto;
   border-radius: 10px;
 }
 
-/* Tlačítka ve formuláři */
+/* Formulář */
+input {
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  border-radius: 5px;
+}
+
 button {
   background-color: #3498db;
   color: white;
@@ -101,7 +105,6 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
 }
 
 button:hover {
@@ -112,7 +115,7 @@ button:hover {
 footer {
   text-align: center;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
   color: #ecf0f1;
 }
 
