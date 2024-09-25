@@ -1,41 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krystof's Digital Space</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Krystof's Personal Web</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><strong>Krystof's Web</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <header>
-        <h1>Hello, I'm Krystof</h1>
-        <p>Welcome to My Digital Space</p>
-    </header>
-
+  <main>
+    <!-- About Me Section -->
     <section id="about">
-        <h2>About Me</h2>
-        <p>This section introduces your background, coding skills, and interests. Customize it to reflect your journey.</p>
+      <h2>About Me</h2>
+      <p>Hello! I am Krystof, a passionate developer with a love for creating beautiful web experiences.</p>
+      <img src="https://source.unsplash.com/random/800x600/?developer" alt="Developer Image">
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
-        <h2>Skills</h2>
-        <p>Technologies: JavaScript, HTML, CSS, and more. Focus on responsive and dynamic websites.</p>
+      <h2>Skills</h2>
+      <ul>
+        <li>Web Development (HTML, CSS, JavaScript)</li>
+        <li>Back-end Development (Node.js, Python)</li>
+        <li>Database Management (SQL, MongoDB)</li>
+      </ul>
+      <img src="https://source.unsplash.com/random/800x600/?coding" alt="Coding Image">
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
-        <h2>My Projects</h2>
-        <p>Projects are under construction and will be showcased soon!</p>
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="#">Project 1</a> - A web application built using React.</li>
+        <li><a href="#">Project 2</a> - A Node.js backend for a mobile app.</li>
+        <li><a href="#">Project 3</a> - An e-commerce website using Python and Django.</li>
+      </ul>
+      <img src="https://source.unsplash.com/random/800x600/?project" alt="Projects Image">
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: vachkrystof@gmail.com</p>
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit">Send</button>
+      </form>
     </section>
+  </main>
 
-    <footer>
-        <p>© 2024 Krystof's Digital Space</p>
-    </footer>
-
+  <footer>
+    <small><a href="#about">About</a> • <a href="#contact">Contact</a></small>
+  </footer>
 </body>
 </html>
