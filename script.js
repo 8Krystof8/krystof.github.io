@@ -1,21 +1,38 @@
-// Funkce pro odhalení sekcí při scrollování
-function revealSections() {
-    const sections = document.querySelectorAll('.section');
-    const windowHeight = window.innerHeight;
-    const revealPoint = 150;
+// Burger Menu
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
 
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-active');
+    // Animace burgeru
+    burger.classList.toggle('toggle');
+});
 
-        if(sectionTop < windowHeight - revealPoint) {
-            section.classList.add('show');
-        }
+// Animace při scrollování
+const skills = document.querySelectorAll('.skill-progress span');
+
+window.addEventListener('scroll', () => {
+    let skillsSection = document.querySelector('.skills').offsetTop;
+    let screenPosition = window.innerHeight + window.scrollY;
+
+    if (screenPosition > skillsSection) {
+        skills.forEach(skill => {
+            let skillLevel = skill.style.width;
+            skill.style.width = skill.getAttribute('style').match(/width:\s*(\d+%)/)[1];
+        });
+    }
+});
+
+// Hladké scrollování
+const navLinksItems = document.querySelectorAll('.nav-links a');
+
+navLinksItems.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+        navLinks.classList.remove('nav-active');
+        burger.classList.remove('toggle');
     });
-}
-
-window.addEventListener('scroll', revealSections);
-
-// Inicializace při načtení stránky
-document.addEventListener('DOMContentLoaded', () => {
-    revealSections();
 });
