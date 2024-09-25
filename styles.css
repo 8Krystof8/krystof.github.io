@@ -112,18 +112,43 @@ button:hover {
 }
 
 /* Footer */
+/* Footer */
 footer {
   text-align: center;
-  padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7); /* Tmavší pozadí pro výrazný kontrast */
   color: #ecf0f1;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 footer a {
   color: #3498db;
   text-decoration: none;
+  margin: 0 1rem;
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+footer .socials {
+  margin-top: 0.5rem;
+}
+
+footer .socials a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+footer .socials a:hover {
+  color: #3498db;
 }
