@@ -1,4 +1,4 @@
-// Burger Menu
+// Burger Menuu
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 
