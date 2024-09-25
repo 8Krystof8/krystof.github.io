@@ -2,18 +2,18 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Domů - Vesmírný Web</title>
+    <title>Vesmírný Web</title>
     <meta name="description" content="Osobní web mladého vývojáře s vášní pro vesmír a technologie.">
-    <meta name="keywords" content="vývojář, programování, projekty, vesmír, technologie">
+    <meta name="keywords" content="vývojář, vesmír, technologie, projekty, kontakt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Open Graph Meta Tagy -->
-    <meta property="og:title" content="Vesmírný Web - Domů">
-    <meta property="og:description" content="Osobní web mladého vývojáře s vášní pro vesmír a technologie.">
+    <meta property="og:title" content="Vesmírný Web">
+    <meta property="og:description" content="Objevte projekty a vášeň pro vesmír mladého vývojáře.">
     <meta property="og:image" content="images/og-image.jpg">
     <meta property="og:url" content="https://vase-domena.cz">
     <meta property="og:type" content="website">
     <!-- Link na styly -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/styles.min.css">
     <!-- AOS Animace -->
     <link rel="stylesheet" href="aos/aos.css">
     <!-- Fonty -->
@@ -21,21 +21,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Přepínač Dark Mode -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider round"></span>
-        </label>
-    </div>
-
     <!-- Navigace -->
     <nav id="navbar">
         <div class="logo">Vesmírný Web</div>
         <ul class="nav-links">
-            <li><a href="index.html">Domů</a></li>
-            <li><a href="about.html">O mně</a></li>
-            <li><a href="projects.html">Projekty</a></li>
+            <li><a href="#domu">Domů</a></li>
+            <li><a href="#projekty">Projekty</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
         <div class="burger">
@@ -48,17 +39,37 @@
     <!-- Hero Sekce -->
     <section class="hero" id="domu">
         <div class="hero-content" data-aos="fade-up">
-            <h1>Vítejte ve vesmíru</h1>
-            <p>Objevte mé projekty a vášeň pro programování.</p>
-            <a href="projects.html" class="btn">Prozkoumat Projekty</a>
+            <h1>Objevte Vesmír</h1>
+            <p>Programování je můj vesmír.</p>
+            <a href="#projekty" class="btn">Moje Projekty</a>
         </div>
         <!-- Scroll Down Indikátor -->
         <div class="scroll-down"></div>
     </section>
 
+    <!-- Projekty -->
+    <section id="projekty" class="projects">
+        <h2 data-aos="fade-right">Projekty</h2>
+        <div class="projects-grid">
+            <div class="project-item" data-aos="zoom-in">
+                <img src="images/project1.jpg" alt="Projekt 1" loading="lazy">
+                <h3>Projekt 1</h3>
+                <p>Popis projektu 1.</p>
+                <a href="#" class="btn">Více Info</a>
+            </div>
+            <div class="project-item" data-aos="zoom-in">
+                <img src="images/project2.jpg" alt="Projekt 2" loading="lazy">
+                <h3>Projekt 2</h3>
+                <p>Popis projektu 2.</p>
+                <a href="#" class="btn">Více Info</a>
+            </div>
+            <!-- Přidejte další projekty podle potřeby -->
+        </div>
+    </section>
+
     <!-- Kontakt -->
     <section id="kontakt" class="contact">
-        <h2 data-aos="fade-right">Kontaktujte mě</h2>
+        <h2 data-aos="fade-right">Kontakt</h2>
         <form id="contactForm" action="contact.php" method="post" data-aos="fade-up">
             <input type="text" name="jmeno" placeholder="Vaše Jméno" required>
             <input type="email" name="email" placeholder="Váš Email" required>
@@ -67,8 +78,12 @@
         </form>
         <!-- Sociální sítě -->
         <div class="social-links" data-aos="fade-up">
-            <a href="https://github.com/vachkrystof" target="_blank"><img src="images/github-icon.png" alt="GitHub"></a>
-            <a href="https://linkedin.com/in/vachkrystof" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="https://github.com/vachkrystof" target="_blank">
+                <img src="images/icons/github-icon.svg" alt="GitHub">
+            </a>
+            <a href="https://linkedin.com/in/vachkrystof" target="_blank">
+                <img src="images/icons/linkedin-icon.svg" alt="LinkedIn">
+            </a>
             <!-- Přidejte další odkazy podle potřeby -->
         </div>
     </section>
@@ -80,6 +95,6 @@
 
     <!-- Skripty -->
     <script src="aos/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="dist/script.min.js"></script>
 </body>
 </html>

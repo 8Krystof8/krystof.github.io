@@ -1,4 +1,44 @@
-// ... předchozí kód ...
+// Burger Menu
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-active');
+    burger.classList.toggle('toggle');
+});
+
+// Hladké scrollování
+const navLinksItems = document.querySelectorAll('.nav-links a');
+
+navLinksItems.forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (link.hash !== "") {
+            e.preventDefault();
+            const hash = link.hash;
+
+            document.querySelector(hash).scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            navLinks.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+        }
+    });
+});
+
+// Navigační lišta skrývání/přidání
+let lastScrollTop = 0;
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.classList.add('hidden');
+    } else {
+        navbar.classList.remove('hidden');
+    }
+    lastScrollTop = scrollTop;
+});
 
 // Validace formuláře
 document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -29,46 +69,9 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-// Optimalizace výkonu: Minifikace souborů
-// Pro minifikaci můžete použít nástroje jako Terser pro JavaScript a csso-cli pro CSS
-// Například: npx terser script.js -o dist/script.min.js
-//            npx csso styles.css -o dist/styles.min.css
-
-// Lazy Loading obrázků
-const images = document.querySelectorAll('img');
-
-const options = {
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-function handleImg(myImg, observer) {
-    myImg.forEach(myImgSingle => {
-        if (myImgSingle.isIntersecting) {
-            myImgSingle.target.src = myImgSingle.target.getAttribute('data-src');
-            observer.unobserve(myImgSingle.target);
-        }
-    });
-}
-
-const observer = new IntersectionObserver(handleImg, options);
-
-images.forEach(img => {
-    observer.observe(img);
+// Inicializace AOS
+AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true
 });
-
-// Navigační lišta skrývání/přidání
-let lastScrollTop = 0;
-const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        navbar.classList.add('hidden');
-    } else {
-        navbar.classList.remove('hidden');
-    }
-    lastScrollTop = scrollTop;
-});
-
-// ... zbytek kódu ...
