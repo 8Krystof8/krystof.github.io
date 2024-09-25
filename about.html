@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>O mně - Emoční Web</title>
+    <meta name="description" content="Zjistěte více o mladém vývojáři a jeho cestě plné emocí a inspirace.">
+    <meta name="keywords" content="o mně, vývojář, příběh, emoce">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link na styly -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- AOS Animace -->
+    <link rel="stylesheet" href="aos/aos.css">
+    <!-- Fonty -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Přepínač Dark Mode -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <!-- Navigace -->
+    <nav>
+        <div class="logo">Emoční Web</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="about.html">O mně</a></li>
+            <li><a href="projects.html">Projekty</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Sekce O mně -->
+    <section class="about">
+        <h2 data-aos="fade-right">Můj Příběh</h2>
+        <div class="about-content" data-aos="fade-up">
+            <img src="images/profile.jpg" alt="Moje Fotografie">
+            <p>Jsem mladý vývojář, který hledá smysl v kódu a emocích. Každý řádek kódu je pro mě způsobem, jak vyjádřit své pocity a sdílet je se světem. Věřím, že technologie mohou být mostem mezi lidmi a jejich sny.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Emoční Web. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- Skripty -->
+    <script src="aos/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
