@@ -12,8 +12,8 @@
 :root {
     --bg-color: #0d0d0d;
     --text-color: #e6e6e6;
-    --accent-color: #ff6f61;
-    --accent-color-hover: #e65c50;
+    --accent-color: linear-gradient(90deg, #ff6f61, #ff8c42, #ffd700, #8cff66, #61ffca, #61a0ff, #c061ff);
+    --accent-color-hover: linear-gradient(90deg, #e65c50, #e67c30, #e6c700, #7cd556, #56e6b4, #5690e6, #a056e6);
 }
 
 /* Tělo stránky */
@@ -30,14 +30,19 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 60px; /* Zmenšena výška */
     background: rgba(13, 13, 13, 0.8);
     backdrop-filter: blur(5px);
-    padding: 0 50px;
+    padding: 0 20px;
     position: fixed;
     width: 100%;
     z-index: 999;
     border-bottom: 1px solid #333;
+    transition: height 0.3s ease;
+}
+
+nav.scrolled {
+    height: 50px;
 }
 
 nav .nav-links {
@@ -46,18 +51,18 @@ nav .nav-links {
 }
 
 nav .nav-links li {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 nav .nav-links a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: color 0.3s;
 }
 
 nav .nav-links a:hover {
-    color: var(--accent-color);
+    color: #ffffff;
 }
 
 /* Burger Menu pro mobilní zařízení */
@@ -105,7 +110,7 @@ nav .nav-links a:hover {
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 50px;
     margin-bottom: 20px;
     font-weight: 700;
     text-transform: uppercase;
@@ -114,25 +119,43 @@ nav .nav-links a:hover {
 }
 
 .hero h1 .highlight {
-    color: var(--accent-color);
-    animation: textGlow 2s ease-in-out infinite alternate;
+    background: var(--accent-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hueRotate 10s infinite linear;
+}
+
+@keyframes hueRotate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
 }
 
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--accent-color);
+    background: var(--accent-color);
     color: #ffffff;
     border: none;
     text-decoration: none;
     font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: transform 0.3s;
     cursor: pointer;
     border-radius: 30px;
+    background-size: 200% auto;
+    animation: gradientBG 5s infinite alternate;
+}
+
+@keyframes gradientBG {
+    to {
+        background-position: 200% center;
+    }
 }
 
 .btn:hover {
-    background-color: var(--accent-color-hover);
     transform: scale(1.05);
 }
 
@@ -183,8 +206,11 @@ nav .nav-links a:hover {
 .about h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    color: var(--accent-color);
+    background: var(--accent-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
+    animation: hueRotate 10s infinite linear;
 }
 
 .about .container {
@@ -199,6 +225,52 @@ nav .nav-links a:hover {
     margin-bottom: 20px;
 }
 
+/* Sekce Tvorba Webů */
+.web-development {
+    padding: 100px 50px;
+    background-image: url('images/stars.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    color: #ffffff;
+}
+
+.web-development::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13,13,13,0.8);
+}
+
+.web-development .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.web-development h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    background: var(--accent-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hueRotate 10s infinite linear;
+}
+
+.web-development p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.web-development .btn {
+    background: var(--accent-color);
+    animation: gradientBG 5s infinite alternate;
+}
+
 /* Projekty */
 .projects {
     padding: 100px 50px;
@@ -209,7 +281,10 @@ nav .nav-links a:hover {
 .projects h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    color: var(--accent-color);
+    background: var(--accent-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hueRotate 10s infinite linear;
 }
 
 .projects-grid {
@@ -237,7 +312,8 @@ nav .nav-links a:hover {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,111,97,0.2), transparent);
+    background: var(--accent-color);
+    opacity: 0.2;
     transition: left 0.5s ease;
 }
 
@@ -275,6 +351,11 @@ nav .nav-links a:hover {
     color: #cccccc;
 }
 
+.project-item .btn {
+    background: var(--accent-color);
+    animation: gradientBG 5s infinite alternate;
+}
+
 /* Kontakt */
 .contact {
     padding: 100px 50px;
@@ -286,7 +367,11 @@ nav .nav-links a:hover {
 .contact h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    color: var(--accent-color);
+    background: var(--accent-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hueRotate 10s infinite linear;
+    text-align: center;
 }
 
 .contact form {
@@ -316,17 +401,17 @@ nav .nav-links a:hover {
 .contact button {
     width: 100%;
     padding: 15px;
-    background-color: var(--accent-color);
+    background: var(--accent-color);
     color: #ffffff;
     border: none;
     font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: transform 0.3s;
     border-radius: 30px;
+    animation: gradientBG 5s infinite alternate;
 }
 
 .contact button:hover {
-    background-color: var(--accent-color-hover);
     transform: scale(1.05);
 }
 
@@ -372,7 +457,7 @@ footer {
 .footer-image {
     width: 100%;
     height: auto;
-    opacity: 0.2;
+    opacity: 0.3; /* Zvýšena viditelnost Země */
     position: absolute;
     bottom: 0;
     left: 0;
@@ -394,15 +479,6 @@ footer p {
     }
 }
 
-@keyframes textGlow {
-    from {
-        text-shadow: 0 0 10px var(--accent-color);
-    }
-    to {
-        text-shadow: 0 0 20px var(--accent-color);
-    }
-}
-
 /* Responzivní design */
 @media screen and (max-width: 768px) {
     nav .nav-links {
@@ -410,7 +486,7 @@ footer p {
         flex-direction: column;
         background-color: rgba(13, 13, 13, 0.95);
         position: absolute;
-        top: 80px;
+        top: 60px; /* Upraveno kvůli zmenšení navigace */
         right: 0;
         width: 200px;
         border-left: 1px solid #333333;
@@ -430,11 +506,11 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .hero p {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 

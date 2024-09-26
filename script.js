@@ -1,4 +1,4 @@
-// Burger Menuu
+// Burger Menu
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -26,18 +26,15 @@ navLinksItems.forEach(link => {
     });
 });
 
-// Navigační lišta skrývání/přidání
-let lastScrollTop = 0;
+// Navigační lišta skrývání/přidání a změna velikosti při scrollování
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        navbar.classList.add('hidden');
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.classList.remove('hidden');
+        navbar.classList.remove('scrolled');
     }
-    lastScrollTop = scrollTop;
 });
 
 // Validace formuláře
