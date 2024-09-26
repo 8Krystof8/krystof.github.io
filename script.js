@@ -12,7 +12,7 @@ const navLinksItems = document.querySelectorAll('.nav-links a');
 
 navLinksItems.forEach(link => {
     link.addEventListener('click', (e) => {
-        if (link.hash !== "") {
+        if (link.hash !== "" && link.pathname === window.location.pathname) {
             e.preventDefault();
             const hash = link.hash;
 
@@ -26,7 +26,7 @@ navLinksItems.forEach(link => {
     });
 });
 
-// Navigační lišta skrývání/přidání a změna velikosti při scrollování
+// Navigační lišta změna velikosti při scrollování
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', function() {
@@ -37,7 +37,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Validace formuláře
+// Validace kontaktního formuláře
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     let valid = true;
     const name = this.jmeno.value.trim();
@@ -60,6 +60,38 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
     }
 });
+
+// Validace objednávkového formuláře
+const webOrderForm = document.getElementById('webOrderForm');
+if (webOrderForm) {
+    webOrderForm.addEventListener('submit', function(e) {
+        let valid = true;
+        const name = this.jmeno.value.trim();
+        const email = this.email.value.trim();
+        const type = this.typ_webu.value;
+        const requirements = this.pozadavky.value.trim();
+
+        if (name === '') {
+            alert('Prosím, zadejte své jméno.');
+            valid = false;
+        }
+        if (email === '' || !validateEmail(email)) {
+            alert('Prosím, zadejte platný email.');
+            valid = false;
+        }
+        if (type === '') {
+            alert('Prosím, vyberte typ webu.');
+            valid = false;
+        }
+        if (requirements === '') {
+            alert('Prosím, napište své požadavky.');
+            valid = false;
+        }
+        if (!valid) {
+            e.preventDefault();
+        }
+    });
+}
 
 function validateEmail(email) {
     const re = /\S+@\S+\.\S+/;

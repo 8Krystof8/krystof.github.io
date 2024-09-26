@@ -12,8 +12,8 @@
 :root {
     --bg-color: #0d0d0d;
     --text-color: #e6e6e6;
-    --accent-color: linear-gradient(90deg, #ff6f61, #ff8c42, #ffd700, #8cff66, #61ffca, #61a0ff, #c061ff);
-    --accent-color-hover: linear-gradient(90deg, #e65c50, #e67c30, #e6c700, #7cd556, #56e6b4, #5690e6, #a056e6);
+    --accent-color: #ff6f61;
+    --accent-color-hover: #e65c50;
 }
 
 /* Tělo stránky */
@@ -30,7 +30,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px; /* Zmenšena výška */
+    height: 60px;
     background: rgba(13, 13, 13, 0.8);
     backdrop-filter: blur(5px);
     padding: 0 20px;
@@ -113,50 +113,29 @@ nav .nav-links a:hover {
     font-size: 50px;
     margin-bottom: 20px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     line-height: 1.2;
 }
 
 .hero h1 .highlight {
-    background: var(--accent-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: hueRotate 10s infinite linear;
-}
-
-@keyframes hueRotate {
-    from {
-        filter: hue-rotate(0deg);
-    }
-    to {
-        filter: hue-rotate(360deg);
-    }
+    color: var(--accent-color);
 }
 
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     color: #ffffff;
     border: none;
     text-decoration: none;
     font-size: 18px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     border-radius: 30px;
-    background-size: 200% auto;
-    animation: gradientBG 5s infinite alternate;
-}
-
-@keyframes gradientBG {
-    to {
-        background-position: 200% center;
-    }
 }
 
 .btn:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* Scroll Down Indikátor */
@@ -206,11 +185,8 @@ nav .nav-links a:hover {
 .about h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    background: var(--accent-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent-color);
     text-align: center;
-    animation: hueRotate 10s infinite linear;
 }
 
 .about .container {
@@ -228,47 +204,122 @@ nav .nav-links a:hover {
 /* Sekce Tvorba Webů */
 .web-development {
     padding: 100px 50px;
-    background-image: url('images/stars.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
+    background-color: var(--bg-color);
     color: #ffffff;
 }
 
-.web-development::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(13,13,13,0.8);
-}
-
 .web-development .container {
-    position: relative;
-    z-index: 1;
     text-align: center;
 }
 
 .web-development h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    background: var(--accent-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: hueRotate 10s infinite linear;
+    color: var(--accent-color);
 }
 
-.web-development p {
+.offer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.offer-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 20px;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.offer-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.offer-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.offer-item .price {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.offer-item ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.offer-item ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Objednávkový formulář */
+.order-form {
+    padding: 100px 50px;
+    background-color: var(--bg-color);
+    color: #ffffff;
+}
+
+.order-form .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.order-form h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.order-form form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.order-form input, .order-form textarea, .order-form select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid #333333;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.order-form input::placeholder, .order-form textarea::placeholder {
+    color: #cccccc;
+}
+
+.order-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
     font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 30px;
 }
 
-.web-development .btn {
-    background: var(--accent-color);
-    animation: gradientBG 5s infinite alternate;
+.order-form button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* Projekty */
@@ -281,10 +332,7 @@ nav .nav-links a:hover {
 .projects h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    background: var(--accent-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: hueRotate 10s infinite linear;
+    color: var(--accent-color);
 }
 
 .projects-grid {
@@ -299,26 +347,10 @@ nav .nav-links a:hover {
     width: 300px;
     padding: 20px;
     border: 1px solid #333;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
-}
-
-.project-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--accent-color);
-    opacity: 0.2;
-    transition: left 0.5s ease;
-}
-
-.project-item:hover::before {
-    left: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-item:hover {
@@ -336,13 +368,13 @@ nav .nav-links a:hover {
 }
 
 .project-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .project-item h3 {
     margin-bottom: 10px;
     font-size: 24px;
-    color: var(--text-color);
+    color: var(--accent-color);
 }
 
 .project-item p {
@@ -352,8 +384,7 @@ nav .nav-links a:hover {
 }
 
 .project-item .btn {
-    background: var(--accent-color);
-    animation: gradientBG 5s infinite alternate;
+    background-color: var(--accent-color);
 }
 
 /* Kontakt */
@@ -367,10 +398,7 @@ nav .nav-links a:hover {
 .contact h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    background: var(--accent-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: hueRotate 10s infinite linear;
+    color: var(--accent-color);
     text-align: center;
 }
 
@@ -401,18 +429,18 @@ nav .nav-links a:hover {
 .contact button {
     width: 100%;
     padding: 15px;
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     color: #ffffff;
     border: none;
     font-size: 18px;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     border-radius: 30px;
-    animation: gradientBG 5s infinite alternate;
 }
 
 .contact button:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* Sociální sítě */
@@ -457,7 +485,7 @@ footer {
 .footer-image {
     width: 100%;
     height: auto;
-    opacity: 0.3; /* Zvýšena viditelnost Země */
+    opacity: 0.3;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -486,7 +514,7 @@ footer p {
         flex-direction: column;
         background-color: rgba(13, 13, 13, 0.95);
         position: absolute;
-        top: 60px; /* Upraveno kvůli zmenšení navigace */
+        top: 60px;
         right: 0;
         width: 200px;
         border-left: 1px solid #333333;
@@ -501,7 +529,7 @@ footer p {
         display: block;
     }
 
-    .projects-grid {
+    .offer-grid, .projects-grid {
         flex-direction: column;
     }
 
@@ -512,10 +540,4 @@ footer p {
     .hero p {
         font-size: 16px;
     }
-}
-
-/* Skrytí navigace při scrollování dolů */
-nav.hidden {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
 }
