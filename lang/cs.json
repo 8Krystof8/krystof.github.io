@@ -1,0 +1,17 @@
+{
+    "title": "Vesmírný Web",
+    "nav-home": "Domů",
+    "nav-about": "O mně",
+    "nav-projects": "Projekty",
+    "nav-webdev": "Tvorba Webů",
+    "nav-contact": "Kontakt",
+    "hero-heading": "Jmenuji se Kryštof,<br>a toto je<br><span class=\"highlight\">Můj Vesmír</span>",
+    "hero-button": "Prozkoumat Projekty",
+    "about-heading": "O mně",
+    "about-paragraph-1": "Ahoj! Jsem Kryštof, student informačních technologií s vášní pro programování...",
+    "contact-heading": "Kontakt",
+    "contact-name-placeholder": "Vaše Jméno",
+    "contact-email-placeholder": "Váš Email",
+    "contact-message-placeholder": "Vaše Zpráva",
+    "contact-submit": "Odeslat"
+}

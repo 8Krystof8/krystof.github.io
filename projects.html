@@ -2,8 +2,8 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Projekty - Vesmírný Web</title>
-    <meta name="description" content="Prozkoumejte projekty Kryštofa, včetně jeho nejnovějšího projektu Tribity.">
+    <title data-key="title">Projekty - Vesmírný Web</title>
+    <meta name="description" content="Prozkoumejte projekty Kryštofa, včetně jeho nejnovějšího projektu Tribity." data-key="meta-description">
     <meta name="keywords" content="Kryštof, projekty, Tribity, technologie">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link na styly -->
@@ -18,12 +18,20 @@
     <!-- Navigace -->
     <nav id="navbar">
         <ul class="nav-links">
-            <li><a href="index.html">Domů</a></li>
-            <li><a href="index.html#about">O mně</a></li>
-            <li><a href="projects.html">Projekty</a></li>
-            <li><a href="weby.html">Tvorba Webů</a></li>
-            <li><a href="index.html#kontakt">Kontakt</a></li>
+            <li><a href="index.html" data-key="nav-home">Domů</a></li>
+            <li><a href="index.html#about" data-key="nav-about">O mně</a></li>
+            <li><a href="projects.html" data-key="nav-projects">Projekty</a></li>
+            <li><a href="weby.html" data-key="nav-webdev">Tvorba Webů</a></li>
+            <li><a href="index.html#kontakt" data-key="nav-contact">Kontakt</a></li>
         </ul>
+        <!-- Přepínač jazyka -->
+        <div class="language-switcher">
+            <img src="images/icons/language-icon.svg" alt="Language" id="languageIcon">
+            <ul class="language-options">
+                <li data-lang="cs">Čeština</li>
+                <li data-lang="en">English</li>
+            </ul>
+        </div>
         <div class="burger">
             <div></div>
             <div></div>
@@ -33,25 +41,14 @@
 
     <!-- Projekty -->
     <section class="projects">
-        <h2 data-aos="fade-right">Moje Projekty</h2>
+        <h2 data-aos="fade-right" data-key="projects-heading">Moje Projekty</h2>
         <div class="projects-grid">
+            <!-- Projekt 1 -->
             <div class="project-item" data-aos="fade-up" data-aos-delay="100">
                 <img src="images/tribity.jpg" alt="Tribity" loading="lazy">
                 <h3>Tribity</h3>
-                <p>Tribity je můj nejnovější projekt zaměřený na výuku programování pomocí gamifikace a umělé inteligence.</p>
-                <a href="#" class="btn">Více Info</a>
-            </div>
-            <div class="project-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="images/project2.jpg" alt="Projekt 2" loading="lazy">
-                <h3>Projekt 2</h3>
-                <p>Popis projektu 2.</p>
-                <a href="#" class="btn">Více Info</a>
-            </div>
-            <div class="project-item" data-aos="fade-up" data-aos-delay="300">
-                <img src="images/project3.jpg" alt="Projekt 3" loading="lazy">
-                <h3>Projekt 3</h3>
-                <p>Popis projektu 3.</p>
-                <a href="#" class="btn">Více Info</a>
+                <p data-key="project-1-description">Tribity je můj nejnovější projekt zaměřený na výuku programování pomocí gamifikace a umělé inteligence.</p>
+                <a href="#" class="btn" data-key="project-more-info">Více Info</a>
             </div>
             <!-- Přidejte další projekty podle potřeby -->
         </div>

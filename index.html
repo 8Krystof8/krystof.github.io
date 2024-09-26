@@ -2,8 +2,8 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Vesmírný Web</title>
-    <meta name="description" content="Osobní web Kryštofa s vášní pro vesmír a technologie.">
+    <title data-key="title">Vesmírný Web</title>
+    <meta name="description" content="Osobní web Kryštofa s vášní pro vesmír a technologie." data-key="meta-description">
     <meta name="keywords" content="Kryštof, vesmír, technologie, projekty, kontakt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Open Graph Meta Tagy -->
@@ -24,12 +24,20 @@
     <!-- Navigace -->
     <nav id="navbar">
         <ul class="nav-links">
-            <li><a href="index.html">Domů</a></li>
-            <li><a href="#about">O mně</a></li>
-            <li><a href="projects.html">Projekty</a></li>
-            <li><a href="weby.html">Tvorba Webů</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="index.html" data-key="nav-home">Domů</a></li>
+            <li><a href="#about" data-key="nav-about">O mně</a></li>
+            <li><a href="projects.html" data-key="nav-projects">Projekty</a></li>
+            <li><a href="weby.html" data-key="nav-webdev">Tvorba Webů</a></li>
+            <li><a href="#kontakt" data-key="nav-contact">Kontakt</a></li>
         </ul>
+        <!-- Přepínač jazyka -->
+        <div class="language-switcher">
+            <img src="images/icons/language-icon.svg" alt="Language" id="languageIcon">
+            <ul class="language-options">
+                <li data-lang="cs">Čeština</li>
+                <li data-lang="en">English</li>
+            </ul>
+        </div>
         <div class="burger">
             <div></div>
             <div></div>
@@ -40,8 +48,8 @@
     <!-- Hero Sekce -->
     <section class="hero" id="domu">
         <div class="hero-content" data-aos="fade-up">
-            <h1>Jmenuji se Kryštof,<br>a toto je<br><span class="highlight">Můj Vesmír</span></h1>
-            <a href="projects.html" class="btn">Prozkoumat Projekty</a>
+            <h1 data-key="hero-heading">Jmenuji se Kryštof,<br>a toto je<br><span class="highlight">Můj Vesmír</span></h1>
+            <a href="projects.html" class="btn" data-key="hero-button">Prozkoumat Projekty</a>
         </div>
         <!-- Scroll Down Indikátor -->
         <div class="scroll-down"></div>
@@ -50,22 +58,22 @@
     <!-- O mně -->
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-            <h2>O mně</h2>
-            <p>Ahoj! Jsem Kryštof, student informačních technologií s vášní pro programování, technologie a podnikání. Už od mládí mě fascinovala možnost vytvářet nové věci a proměňovat nápady v realitu. Mým cílem je nejen růst jako vývojář a inovátor, ale také inspirovat ostatní na cestě k úspěchu.</p>
-            <p>V současné době vedu tým pracující na vzdělávacím projektu Tribity, který se zaměřuje na výuku programování pomocí gamifikace a umělé inteligence. Chci pomáhat lidem rozvíjet jejich schopnosti v IT a věřím, že technologie mohou být jednoduché, přístupné a zábavné.</p>
-            <p>Kromě technologií se také zajímám o svět investic a podnikání. Mým cílem je neustále se rozvíjet a hledat nové příležitosti, které mohou zlepšit životy druhých. Jednoduchost a efektivita jsou pro mě klíčové hodnoty, které se snažím promítnout do všech svých projektů.</p>
-            <p>Když zrovna nepracuji na svých projektech, rád si užívám čas v přírodě a přemýšlím nad tím, jak spojit moderní technologie s klidem a pohodou jednoduchého života.</p>
+            <h2 data-key="about-heading">O mně</h2>
+            <p data-key="about-paragraph-1">Ahoj! Jsem Kryštof, student informačních technologií s vášní pro programování, technologie a podnikání. Už od mládí mě fascinovala možnost vytvářet nové věci a proměňovat nápady v realitu.</p>
+            <p data-key="about-paragraph-2">V současné době vedu tým pracující na vzdělávacím projektu Tribity, který se zaměřuje na výuku programování pomocí gamifikace a umělé inteligence.</p>
+            <p data-key="about-paragraph-3">Kromě technologií se také zajímám o svět investic a podnikání. Mým cílem je neustále se rozvíjet a hledat nové příležitosti, které mohou zlepšit životy druhých.</p>
+            <p data-key="about-paragraph-4">Když zrovna nepracuji na svých projektech, rád si užívám čas v přírodě a přemýšlím nad tím, jak spojit moderní technologie s klidem a pohodou jednoduchého života.</p>
         </div>
     </section>
 
     <!-- Kontakt -->
     <section id="kontakt" class="contact">
-        <h2 data-aos="fade-right">Kontakt</h2>
+        <h2 data-aos="fade-right" data-key="contact-heading">Kontakt</h2>
         <form id="contactForm" action="contact.php" method="post" data-aos="fade-up">
-            <input type="text" name="jmeno" placeholder="Vaše Jméno" required>
-            <input type="email" name="email" placeholder="Váš Email" required>
-            <textarea name="zprava" rows="5" placeholder="Vaše Zpráva" required></textarea>
-            <button type="submit" class="btn">Odeslat</button>
+            <input type="text" name="jmeno" placeholder="Vaše Jméno" required data-key="contact-name-placeholder">
+            <input type="email" name="email" placeholder="Váš Email" required data-key="contact-email-placeholder">
+            <textarea name="zprava" rows="5" placeholder="Vaše Zpráva" required data-key="contact-message-placeholder"></textarea>
+            <button type="submit" class="btn" data-key="contact-submit">Odeslat</button>
         </form>
         <!-- Sociální sítě -->
         <div class="social-links" data-aos="fade-up">

@@ -1,0 +1,17 @@
+{
+    "title": "Space Web",
+    "nav-home": "Home",
+    "nav-about": "About Me",
+    "nav-projects": "Projects",
+    "nav-webdev": "Web Development",
+    "nav-contact": "Contact",
+    "hero-heading": "My name is Kryštof,<br>and this is<br><span class=\"highlight\">My Space</span>",
+    "hero-button": "Explore Projects",
+    "about-heading": "About Me",
+    "about-paragraph-1": "Hi! I'm Kryštof, an IT student with a passion for programming...",
+    "contact-heading": "Contact",
+    "contact-name-placeholder": "Your Name",
+    "contact-email-placeholder": "Your Email",
+    "contact-message-placeholder": "Your Message",
+    "contact-submit": "Send"
+}

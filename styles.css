@@ -65,6 +65,46 @@ nav .nav-links a:hover {
     color: #ffffff;
 }
 
+/* Přepínač jazyka */
+.language-switcher {
+    position: relative;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.language-switcher img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: rgba(13, 13, 13, 0.95);
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.language-options.show {
+    display: block;
+}
+
+.language-options li {
+    padding: 10px 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.language-options li:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
 /* Burger Menu pro mobilní zařízení */
 .burger {
     display: none;
@@ -539,5 +579,14 @@ footer p {
 
     .hero p {
         font-size: 16px;
+    }
+}
+
+/* Přepínač jazyka v mobilní verzi */
+@media screen and (max-width: 768px) {
+    .language-switcher {
+        position: absolute;
+        top: 15px;
+        right: 60px;
     }
 }
