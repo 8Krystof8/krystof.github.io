@@ -2,9 +2,9 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title data-key="title">Tvorba Webů - Vesmírný Web</title>
-    <meta name="description" content="Nabídka tvorby webových stránek na míru." data-key="meta-description">
-    <meta name="keywords" content="tvorba webů, webové stránky, Kryštof, nabídka">
+    <title data-key="title">Tvorba Webů - Kryštof Vach</title>
+    <meta name="description" content="Nabízím profesionální tvorbu webových stránek na míru." data-key="meta-description">
+    <meta name="keywords" content="tvorba webů, webové stránky, Kryštof Vach, nabídka">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link na styly -->
     <link rel="stylesheet" href="styles.css">
@@ -44,7 +44,46 @@
         <div class="container" data-aos="fade-up">
             <h2 data-key="webdev-heading">Tvorba Webových Stránek</h2>
             <p data-key="webdev-description">Nabízím profesionální tvorbu webových stránek na míru. Specializuji se na moderní, responzivní a uživatelsky přívětivé weby, které pomohou vašemu podnikání růst.</p>
-            <!-- Nabídka a formulář zůstávají stejné, ale texty budou lokalizovány -->
+            <!-- Nová nabídka služeb -->
+            <div class="services">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                    <h3 data-key="service-basic-heading">Základní Web</h3>
+                    <p data-key="service-basic-description">Jednoduchý web pro prezentaci vaší společnosti nebo projektu.</p>
+                    <p class="price">od 5 000 Kč</p>
+                    <a href="#order-form" class="btn" data-key="service-order-button">Objednat</a>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3 data-key="service-advanced-heading">Pokročilý Web</h3>
+                    <p data-key="service-advanced-description">Web s pokročilými funkcemi a individuálním designem.</p>
+                    <p class="price">od 10 000 Kč</p>
+                    <a href="#order-form" class="btn" data-key="service-order-button">Objednat</a>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                    <h3 data-key="service-ecommerce-heading">E-commerce Řešení</h3>
+                    <p data-key="service-ecommerce-description">Kompletní e-shop s platebními bránami a správou objednávek.</p>
+                    <p class="price">od 20 000 Kč</p>
+                    <a href="#order-form" class="btn" data-key="service-order-button">Objednat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objednávkový formulář -->
+    <section id="order-form" class="order-form">
+        <div class="container" data-aos="fade-up">
+            <h2 data-key="order-heading">Máte zájem? Kontaktujte mě!</h2>
+            <form id="webOrderForm" action="web_order.php" method="post">
+                <input type="text" name="jmeno" placeholder="Vaše Jméno" required data-key="order-name-placeholder">
+                <input type="email" name="email" placeholder="Váš Email" required data-key="order-email-placeholder">
+                <select name="typ_webu" required data-key="order-type-placeholder">
+                    <option value="" disabled selected data-key="order-type-select">Vyberte typ webu</option>
+                    <option value="Základní Web" data-key="order-type-basic">Základní Web</option>
+                    <option value="Pokročilý Web" data-key="order-type-advanced">Pokročilý Web</option>
+                    <option value="E-commerce Řešení" data-key="order-type-ecommerce">E-commerce Řešení</option>
+                </select>
+                <textarea name="pozadavky" rows="5" placeholder="Vaše požadavky" required data-key="order-requirements-placeholder"></textarea>
+                <button type="submit" class="btn" data-key="order-submit">Odeslat</button>
+            </form>
         </div>
     </section>
 
