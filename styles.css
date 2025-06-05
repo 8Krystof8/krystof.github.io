@@ -1,5 +1,5 @@
-/* Import fontu */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+/* Import moderního fontu */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 /* Reset stylů */
 * {
@@ -10,15 +10,16 @@
 
 /* Proměnné barev */
 :root {
-    --bg-color: #0d0d0d;
-    --text-color: #e6e6e6;
-    --accent-color: #4caf50; /* Moderní zelená */
-    --accent-color-hover: #388e3c;
+    --bg-color: #0e0e11;
+    --text-color: #f0f0f0;
+    --accent-color: #0084ff; /* Moderní modrá */
+    --accent-color-hover: #0068cc;
+    --card-bg: rgba(255,255,255,0.05);
 }
 
 /* Tělo stránky */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
@@ -126,20 +127,10 @@ nav .nav-links a:hover {
 /* Hero Sekce */
 .hero {
     height: 100vh;
-    background-image: url('images/stars.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/stars.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(13,13,13,0.9) 0%, rgba(26,26,26,0.6) 100%);
 }
 
 .hero-content {
@@ -305,6 +296,92 @@ nav .nav-links a:hover {
     color: #cccccc;
 }
 
+/* Nabídka služeb na stránce Tvorba Webů */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.service-item .price {
+    margin: 15px 0;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Detail projektu */
+.project-detail .project-image {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Objednávkový formulář */
+.order-form {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #0e0e11 0%, #15151a 100%);
+}
+
+.order-form .container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.order-form form {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.order-form input,
+.order-form textarea,
+.order-form select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid #333;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.order-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.order-form button:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 /* Kontakt */
 .contact {
     padding: 100px 50px;
@@ -450,6 +527,11 @@ footer p {
 
     .offer-grid, .projects-grid {
         flex-direction: column;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero h1 {
