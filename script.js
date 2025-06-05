@@ -52,6 +52,28 @@ if (scrollTopBtn) {
     });
 }
 
+// Parallax effect for hero background
+const heroSection = document.querySelector(".hero");
+if (heroSection) {
+    window.addEventListener("scroll", () => {
+        heroSection.style.backgroundPositionY = window.scrollY * 0.5 + "px";
+    });
+}
+
+// Theme toggle
+const themeToggleBtn = document.getElementById("themeToggle");
+if (themeToggleBtn) {
+    const saved = localStorage.getItem("theme") || "dark";
+    document.body.classList.toggle("light-theme", saved === "light");
+    themeToggleBtn.textContent = saved === "light" ? "🌙" : "☀️";
+    themeToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        const light = document.body.classList.contains("light-theme");
+        themeToggleBtn.textContent = light ? "🌙" : "☀️";
+        localStorage.setItem("theme", light ? "light" : "dark");
+    });
+}
+
 // Validace kontaktního formuláře
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {

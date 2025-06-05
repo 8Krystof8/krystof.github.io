@@ -17,6 +17,19 @@
     --glass-bg: rgba(255, 255, 255, 0.1);
 }
 
+body.light-theme {
+    --bg-color: #fdfdfd;
+    --text-color: #222;
+    --glass-bg: rgba(0,0,0,0.1);
+    background-image: none;
+}
+
+/* Reusable Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 /* Tělo stránky */
 body {
     font-family: 'Roboto', sans-serif;
@@ -46,6 +59,13 @@ nav {
 
 nav.scrolled {
     height: 50px;
+}
+
+.theme-toggle {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
 }
 
 nav .nav-links {
@@ -279,9 +299,23 @@ nav .nav-links a:hover {
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+.project-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+.project-item:hover .project-content {
+    transform: translateY(0);
+}
+
 
 .project-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.03);
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
@@ -315,7 +349,11 @@ nav .nav-links a:hover {
     padding: 120px 20px;
     text-align: center;
 }
-
+.project-detail .container {
+    background: var(--glass-bg);
+    padding: 40px;
+    border-radius: 15px;
+}
 .project-detail h2 {
     font-size: 36px;
     margin-bottom: 20px;
