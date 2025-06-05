@@ -153,6 +153,12 @@ if (typeof VanillaTilt !== 'undefined') {
         glare: true,
         'max-glare': 0.2
     });
+    VanillaTilt.init(document.querySelectorAll('.project-image'), {
+        max: 10,
+        speed: 300,
+        glare: true,
+        'max-glare': 0.1
+    });
 }
 
 // Interaktivní síť projektů
@@ -245,6 +251,44 @@ function initProjectNetwork() {
     loop();
 }
 document.addEventListener('DOMContentLoaded', initProjectNetwork);
+
+// Parallax starfield background
+function initStarfield() {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'starfield';
+    document.body.prepend(canvas);
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        stars = Array.from({ length: 120 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2 + 0.5,
+            speed: Math.random() * 0.3 + 0.1
+        }));
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#ffffff';
+        for (const star of stars) {
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            ctx.fill();
+            star.y += star.speed;
+            if (star.y > canvas.height) star.y = 0;
+        }
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    draw();
+}
+document.addEventListener('DOMContentLoaded', initStarfield);
 
 // Jazykové proměnné
 let currentLang = localStorage.getItem('language') || 'cs';

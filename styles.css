@@ -41,6 +41,16 @@ body {
     transition: background-color 0.5s, color 0.5s;
 }
 
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
 /* Navigace */
 nav {
     display: flex;
@@ -180,6 +190,12 @@ nav .nav-links a:hover {
     margin-bottom: 20px;
     font-weight: 700;
     line-height: 1.2;
+}
+.hero-typed {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--accent-color);
+    animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
 .hero h1 .highlight {
@@ -359,13 +375,16 @@ nav .nav-links a:hover {
 
 /* Detail projektu */
 .project-detail {
-    padding: 150px 20px 100px;
+    padding: 180px 20px 120px;
     text-align: center;
 }
 .project-detail .container {
     background: var(--glass-bg);
     padding: 40px;
     border-radius: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
 }
 .project-detail h2 {
     font-size: 36px;
@@ -543,6 +562,15 @@ footer p {
     to {
         opacity: 1;
     }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
 }
 
 /* Responzivní design */
