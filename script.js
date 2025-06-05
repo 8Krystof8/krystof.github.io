@@ -37,6 +37,43 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Scroll to top button
+const scrollTopBtn = document.getElementById('scrollTop');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Parallax effect for hero background
+const heroSection = document.querySelector(".hero");
+if (heroSection) {
+    window.addEventListener("scroll", () => {
+        heroSection.style.backgroundPositionY = window.scrollY * 0.5 + "px";
+    });
+}
+
+// Theme toggle
+const themeToggleBtn = document.getElementById("themeToggle");
+if (themeToggleBtn) {
+    const saved = localStorage.getItem("theme") || "dark";
+    document.body.classList.toggle("light-theme", saved === "light");
+    themeToggleBtn.textContent = saved === "light" ? "🌙" : "☀️";
+    themeToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        const light = document.body.classList.contains("light-theme");
+        themeToggleBtn.textContent = light ? "🌙" : "☀️";
+        localStorage.setItem("theme", light ? "light" : "dark");
+    });
+}
+
 // Validace kontaktního formuláře
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -107,6 +144,16 @@ AOS.init({
     easing: 'ease-in-out',
     once: true
 });
+
+// Tilt efekt pro projekty
+if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll('.project-item'), {
+        max: 15,
+        speed: 300,
+        glare: true,
+        'max-glare': 0.2
+    });
+}
 
 // Jazykové proměnné
 let currentLang = localStorage.getItem('language') || 'cs';
