@@ -281,6 +281,19 @@ nav .nav-links a:hover {
     color: var(--accent-color);
 }
 
+.project-network {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.project-network canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
@@ -346,7 +359,7 @@ nav .nav-links a:hover {
 
 /* Detail projektu */
 .project-detail {
-    padding: 120px 20px;
+    padding: 150px 20px 100px;
     text-align: center;
 }
 .project-detail .container {

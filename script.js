@@ -155,6 +155,97 @@ if (typeof VanillaTilt !== 'undefined') {
     });
 }
 
+// Interaktivní síť projektů
+function initProjectNetwork() {
+    const canvas = document.getElementById('projectNetwork');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const projects = [
+        { name: 'Tribity', link: 'tribity.html' },
+        { name: 'Chytré Podlahy', link: 'chytre-podlahy.html' },
+        { name: 'Smart Bin', link: 'smart-bin.html' }
+    ];
+    function resize() {
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const nodes = projects.map(p => ({
+        ...p,
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        r: 8
+    }));
+    const mouse = { x: 0, y: 0 };
+    canvas.addEventListener('mousemove', e => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+    });
+    canvas.addEventListener('click', e => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        for (const node of nodes) {
+            const d = Math.hypot(node.x - x, node.y - y);
+            if (d < node.r + 5) {
+                window.location.href = node.link;
+                return;
+            }
+        }
+    });
+
+    function update() {
+        for (const node of nodes) {
+            node.x += node.vx;
+            node.y += node.vy;
+            if (node.x < node.r || node.x > canvas.width - node.r) node.vx *= -1;
+            if (node.y < node.r || node.y > canvas.height - node.r) node.vy *= -1;
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const a = nodes[i];
+                const b = nodes[j];
+                const dist = Math.hypot(a.x - b.x, a.y - b.y);
+                if (dist < 200) {
+                    ctx.strokeStyle = `rgba(0,188,212,${1 - dist / 200})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.stroke();
+                }
+            }
+        }
+        for (const node of nodes) {
+            const hovered = Math.hypot(node.x - mouse.x, node.y - mouse.y) < node.r + 8;
+            ctx.fillStyle = hovered ? '#ffffff' : '#00bcd4';
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.r + (hovered ? 2 : 0), 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '14px Roboto';
+            ctx.fillText(node.name, node.x + node.r + 4, node.y + 4);
+        }
+    }
+
+    function loop() {
+        update();
+        draw();
+        requestAnimationFrame(loop);
+    }
+    loop();
+}
+document.addEventListener('DOMContentLoaded', initProjectNetwork);
+
 // Jazykové proměnné
 let currentLang = localStorage.getItem('language') || 'cs';
 const languageIcon = document.getElementById('languageIcon');
