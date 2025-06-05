@@ -12,8 +12,9 @@
 :root {
     --bg-color: #0d0d0d;
     --text-color: #e6e6e6;
-    --accent-color: #4caf50; /* Moderní zelená */
-    --accent-color-hover: #388e3c;
+    --accent-color: #00bcd4; /* Fresh cyan */
+    --accent-color-hover: #0097a7;
+    --glass-bg: rgba(255, 255, 255, 0.1);
 }
 
 /* Tělo stránky */
@@ -31,8 +32,8 @@ nav {
     justify-content: center;
     align-items: center;
     height: 60px;
-    background: rgba(13, 13, 13, 0.8);
-    backdrop-filter: blur(5px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
     padding: 0 20px;
     position: fixed;
     width: 100%;
@@ -84,8 +85,9 @@ nav .nav-links a:hover {
     position: absolute;
     top: 30px;
     right: 0;
-    background-color: rgba(13, 13, 13, 0.95);
-    border: 1px solid #333;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     overflow: hidden;
     z-index: 1000;
@@ -126,7 +128,7 @@ nav .nav-links a:hover {
 /* Hero Sekce */
 .hero {
     height: 100vh;
-    background-image: url('images/stars.jpg');
+    background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -264,11 +266,12 @@ nav .nav-links a:hover {
 }
 
 .project-item {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(8px);
     margin: 20px;
     width: 300px;
     padding: 20px;
-    border: 1px solid #333;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     position: relative;
     overflow: hidden;
@@ -323,7 +326,7 @@ nav .nav-links a:hover {
 .contact form {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg);
     padding: 30px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -333,7 +336,7 @@ nav .nav-links a:hover {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    background-color: rgba(255,255,255,0.1);
+    background-color: var(--glass-bg);
     border: 1px solid #333333;
     color: #ffffff;
     font-size: 16px;
