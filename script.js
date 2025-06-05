@@ -37,6 +37,21 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Scroll to top button
+const scrollTopBtn = document.getElementById('scrollTop');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
 // Validace kontaktního formuláře
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -107,6 +122,16 @@ AOS.init({
     easing: 'ease-in-out',
     once: true
 });
+
+// Tilt efekt pro projekty
+if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll('.project-item'), {
+        max: 15,
+        speed: 300,
+        glare: true,
+        'max-glare': 0.2
+    });
+}
 
 // Jazykové proměnné
 let currentLang = localStorage.getItem('language') || 'cs';

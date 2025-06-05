@@ -21,6 +21,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-attachment: fixed;
     color: var(--text-color);
     overflow-x: hidden;
     transition: background-color 0.5s, color 0.5s;
@@ -308,6 +310,38 @@ nav .nav-links a:hover {
     color: #cccccc;
 }
 
+/* Detail projektu */
+.project-detail {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.project-detail h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.project-detail p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-detail ul {
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 15px;
+    display: block;
+}
+
 /* Kontakt */
 .contact {
     padding: 100px 50px;
@@ -386,6 +420,37 @@ nav .nav-links a:hover {
 .social-links img:hover {
     transform: scale(1.1);
     filter: brightness(0.8) invert(1);
+}
+
+/* Tlačítko pro návrat nahoru */
+.scroll-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+    z-index: 999;
+}
+
+.scroll-top:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Footer */
