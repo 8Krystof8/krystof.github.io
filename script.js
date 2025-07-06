@@ -173,7 +173,7 @@ function setLanguage(lang) {
                     element.placeholder = data[key];
                 }
                 if (element.tagName === 'SELECT') {
-                    element.options.forEach(option => {
+                    Array.from(element.options).forEach(option => {
                         const optionKey = option.getAttribute('data-key');
                         if (data[optionKey]) {
                             option.textContent = data[optionKey];
