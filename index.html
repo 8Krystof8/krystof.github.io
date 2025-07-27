@@ -2,129 +2,158 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title data-key="title">Kryštof Vach - Osobní Web</title>
-    <meta name="description" content="Osobní web Kryštofa Vacha s vášní pro technologie a vesmír." data-key="meta-description">
-    <meta name="keywords" content="Kryštof Vach, technologie, vesmír, projekty, kontakt">
+    <title>Kryštof Vach &amp; Lerniq s.r.o. - Osobní a firemní web</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Osobní web Kryštofa Vacha a prezentace firmy Lerniq s.r.o. Objevte projekty jako Tribity a další inovativní řešení v oblasti technologií a vzdělávání.">
+    <meta name="keywords" content="Kryštof Vach, Lerniq, Tribity, projekty, technologie, vzdělání, web development">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Open Graph Meta Tagy -->
-    <meta property="og:title" content="Kryštof Vach - Osobní Web">
-    <meta property="og:description" content="Objevte projekty a služby Kryštofa Vacha.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80">
-    <meta property="og:url" content="https://vase-domena.cz">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Lerniq s.r.o. – Technologie a vzdělávání">
+    <meta property="og:description" content="Poznejte firmu Lerniq s.r.o. a naše projekty jako Tribity.">
+    <meta property="og:image" content="images/lernq-logo.png">
+    <meta property="og:url" content="https://yourdomain.cz">
     <meta property="og:type" content="website">
-    <!-- Link na styly -->
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <!-- AOS Animace -->
+    <!-- AOS Animations -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <!-- Fonty -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigace -->
+    <!-- Navigation -->
     <nav id="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html" data-key="nav-home">Domů</a></li>
-            <li><a href="#about" data-key="nav-about">O mně</a></li>
-            <li><a href="projects.html" data-key="nav-projects">Projekty</a></li>
-            <li><a href="weby.html" data-key="nav-webdev">Tvorba Webů</a></li>
-            <li><a href="#kontakt" data-key="nav-contact">Kontakt</a></li>
-        </ul>
-        <!-- Přepínač jazyka -->
-        <div class="language-switcher">
-            <img src="images/icons/language-icon.svg" alt="Language" id="languageIcon">
-            <ul class="language-options">
-                <li data-lang="cs">Čeština</li>
-                <li data-lang="en">English</li>
+        <div class="container nav-container">
+            <a href="#domu" class="brand">
+                <img src="images/lernq-logo.png" alt="Lerniq Logo" class="brand-logo">
+                <span class="brand-text">Lerniq</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#domu">Domů</a></li>
+                <li><a href="#about">O mně</a></li>
+                <li><a href="#company">Lerniq</a></li>
+                <li><a href="#projects">Projekty</a></li>
+                <li><a href="#collaboration">Spolupráce</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
-        </div>
-        <div class="burger">
-            <div></div>
-            <div></div>
-            <div></div>
+            <!-- Mobile burger menu -->
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Sekce -->
+    <!-- Hero Section -->
     <section class="hero" id="domu">
         <div class="hero-content" data-aos="fade-up">
-            <h1 data-key="hero-heading">Jmenuji se Kryštof,<br>a toto je<br><span class="highlight" data-key="hero-highlight">Můj Vesmír</span></h1>
-            <a href="projects.html" class="btn" data-key="hero-button">Prozkoumat Projekty</a>
+            <h1>Ahoj, jsem Kryštof</h1>
+            <p>Student IT a zakladatel <strong>Lerniq s.r.o.</strong></p>
+            <a href="#projects" class="btn">Prozkoumat Projekty</a>
         </div>
-        <!-- Scroll Down Indikátor -->
+        <!-- Scroll Down Indicator -->
         <div class="scroll-down"></div>
     </section>
 
-    <!-- Button Scroll Top -->
+    <!-- Scroll To Top Button -->
     <div id="scrollTop" class="scroll-top">&#8679;</div>
 
-    <!-- O mně -->
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-            <h2 data-key="about-heading">O mně</h2>
-            <p data-key="about-paragraph-1">Ahoj! Jsem Kryštof, student informačních technologií s vášní pro programování, technologie a podnikání. Už od mládí mě fascinovala možnost vytvářet nové věci a proměňovat nápady v realitu.</p>
-            <p data-key="about-paragraph-2">V současné době vedu tým pracující na vzdělávacím projektu Tribity, který se zaměřuje na výuku programování pomocí gamifikace a umělé inteligence.</p>
-            <p data-key="about-paragraph-3">Kromě technologií se také zajímám o svět investic a podnikání. Mým cílem je neustále se rozvíjet a hledat nové příležitosti, které mohou zlepšit životy druhých.</p>
-            <p data-key="about-paragraph-4">Když zrovna nepracuji na svých projektech, rád si užívám čas v přírodě a přemýšlím nad tím, jak spojit moderní technologie s klidem a pohodou jednoduchého života.</p>
+            <h2>O mně</h2>
+            <p>Ahoj! Jmenuji se Kryštof. Jsem student informačních technologií s vášní pro programování, inovace a podnikání. Už od dětství mě fascinovalo vytvářet nové věci a proměňovat nápady v realitu.</p>
+            <p>V současnosti vedu malý tým a budujeme platformu <strong>Tribity</strong>, která se zaměřuje na výuku programování pomocí gamifikace a umělé inteligence. Zároveň mě zajímá ekonomie a svět investic.</p>
+            <p>Když zrovna nepracuji na projektech, trávím čas v přírodě a přemýšlím, jak propojit moderní technologie s klidem jednoduchého života.</p>
         </div>
     </section>
 
-    <!-- Sekce Projekty (Nově přidaná) -->
-    <section id="projects" class="projects">
-        <h2 data-aos="fade-right" data-key="projects-heading">Moje Projekty</h2>
-        <div class="projects-grid">
-            <!-- Projekt 1 -->
-            <div class="project-item" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=60" alt="Tribity" loading="lazy">
-                <h3>Tribity</h3>
-                <p data-key="project-tribity-description">Tribity je vzdělávací platforma zaměřená na výuku programování pomocí gamifikace a umělé inteligence.</p>
-                <a href="tribity.html" class="btn" data-key="project-more-info">Více Info</a>
+    <!-- Company Section -->
+    <section id="company" class="company">
+        <div class="container" data-aos="fade-up">
+            <h2>Lerniq s.r.o.</h2>
+            <div class="company-content">
+                <div class="company-text">
+                    <p>Lerniq s.r.o. je nová technologická firma zaměřená na rozvoj znalostí v oblasti programování a inovativních technologií. Naším posláním je přiblížit programování široké veřejnosti prostřednictvím zábavných a dostupných nástrojů.</p>
+                    <p>Vyvíjíme různé projekty – od vzdělávací platformy <strong>Tribity</strong> až po chytrá řešení pro sledování pohybu a třídění odpadu. Spolupracujeme se školami a partnery, aby naše produkty byly co nejefektivnější a užitečné.</p>
+                </div>
+                <div class="company-logo">
+                    <img src="images/lernq-logo.png" alt="Lerniq Logo" loading="lazy">
+                </div>
             </div>
-            <!-- Projekt 2 -->
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 data-aos="fade-right">Naše Projekty</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=60" alt="Tribity" loading="lazy">
+                <h3>Tribity</h3>
+                <p>Interaktivní platforma pro výuku programování pomocí gamifikace a AI.</p>
+                <a href="tribity.html" class="btn">Více Info</a>
+            </div>
+            <!-- Project 2 -->
             <div class="project-item" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://images.unsplash.com/photo-1585843277411-6613afc64e81?auto=format&fit=crop&w=600&q=60" alt="Chytré Podlahy" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1585843277411-6613afc64e81?auto=format&fit=crop&w=600&q=60" alt="Chytré Podlahy" loading="lazy">
                 <h3>Chytré Podlahy</h3>
                 <p>Systém chytrých podlah pro interaktivní sledování pohybu.</p>
-                <a href="chytre-podlahy.html" class="btn" data-key="project-more-info">Více Info</a>
+                <a href="chytre-podlahy.html" class="btn">Více Info</a>
             </div>
-            <!-- Projekt 3 -->
+            <!-- Project 3 -->
             <div class="project-item" data-aos="fade-up" data-aos-delay="300">
-            <img src="https://images.unsplash.com/photo-1586771107445-d18d1d82fa1d?auto=format&fit=crop&w=600&q=60" alt="Smart Bin" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1586771107445-d18d1d82fa1d?auto=format&fit=crop&w=600&q=60" alt="Smart Bin" loading="lazy">
                 <h3>Smart Bin</h3>
                 <p>Chytrý koš pro automatické třídění odpadu.</p>
-                <a href="smart-bin.html" class="btn" data-key="project-more-info">Více Info</a>
+                <a href="smart-bin.html" class="btn">Více Info</a>
             </div>
         </div>
-        <a href="projects.html" class="btn" data-key="projects-all-button">Zobrazit Všechny Projekty</a>
+        <a href="projects.html" class="btn all-projects-btn">Zobrazit Všechny Projekty</a>
     </section>
 
-    <!-- Kontakt -->
+    <!-- Collaboration Section -->
+    <section id="collaboration" class="collaboration">
+        <div class="container" data-aos="fade-up">
+            <h2>Spolupráce</h2>
+            <p>Naše projekty testujeme a vyvíjíme ve spolupráci se středními školami a odborníky z praxe. Pokud máte zájem se zapojit nebo navázat partnerství, neváhejte nás kontaktovat.</p>
+            <div class="partner-logos">
+                <img src="images/school-logo.png" alt="Logo naše školy" loading="lazy">
+                <!-- Další loga partnerů lze přidat zde -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="kontakt" class="contact">
-        <h2 data-aos="fade-right" data-key="contact-heading">Kontakt</h2>
-        <form id="contactForm" action="contact.php" method="post" data-aos="fade-up">
-            <input type="text" name="jmeno" placeholder="Vaše Jméno" required data-key="contact-name-placeholder">
-            <input type="email" name="email" placeholder="Váš Email" required data-key="contact-email-placeholder">
-            <textarea name="zprava" rows="5" placeholder="Vaše Zpráva" required data-key="contact-message-placeholder"></textarea>
-            <button type="submit" class="btn" data-key="contact-submit">Odeslat</button>
+        <h2 data-aos="fade-right">Kontakt</h2>
+        <form id="contactForm" data-aos="fade-up">
+            <input type="text" name="jmeno" placeholder="Vaše Jméno" required>
+            <input type="email" name="email" placeholder="Váš Email" required>
+            <textarea name="zprava" rows="5" placeholder="Vaše Zpráva" required></textarea>
+            <button type="submit" class="btn">Odeslat</button>
         </form>
-        <!-- Sociální sítě -->
         <div class="social-links" data-aos="fade-up">
-            <a href="https://github.com/vachkrystof" target="_blank">
-                <img src="images/icons/github-icon.svg" alt="GitHub">
+            <a href="https://github.com/vachkrystof" target="_blank" aria-label="GitHub">
+                <svg width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
             </a>
-            <!-- Přidej další sociální sítě podle potřeby -->
+            <!-- Další sociální odkazy -->
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <img src="https://images.unsplash.com/photo-1484502249930-e1c80a6d58cf?auto=format&fit=crop&w=600&q=60" alt="Země" class="footer-image">
-            <p>&copy; 2023 Kryštof Vach. Všechna práva vyhrazena.</p>
+            <p>&copy; 2025 Kryštof Vach &amp; Lerniq s.r.o. Všechna práva vyhrazena.</p>
         </div>
     </footer>
 
-    <!-- Skripty -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>

@@ -2,105 +2,88 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title data-key="title">Tvorba Webů - Kryštof Vach</title>
-    <meta name="description" content="Nabízím profesionální tvorbu webových stránek na míru." data-key="meta-description">
-    <meta name="keywords" content="tvorba webů, webové stránky, Kryštof Vach, nabídka">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link na styly -->
+    <title>Tvorba Webů – Kryštof Vach &amp; Lerniq s.r.o.</title>
+    <meta name="description" content="Kryštof Vach a Lerniq s.r.o. nabízí moderní, responzivní a uživatelsky přívětivé webové stránky. Vyberte si balíček nebo nás kontaktujte pro individuální projekt.">
+    <meta name="keywords" content="tvorba webu, webové stránky, web development, Kryštof Vach, Lerniq">
+    <meta property="og:title" content="Tvorba Webů – Lerniq s.r.o.">
+    <meta property="og:description" content="Moderní, responzivní a uživatelsky přívětivé webové stránky od Lerniq.">
+    <meta property="og:image" content="images/webdev.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/lernq-logo.png">
     <link rel="stylesheet" href="styles.css">
-    <!-- AOS Animace -->
+    <!-- AOS Animation library -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <!-- Fonty -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Vanilla Tilt for 3D tilt effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 </head>
 <body>
-    <!-- Navigace -->
-    <nav id="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html" data-key="nav-home">Domů</a></li>
-            <li><a href="index.html#about" data-key="nav-about">O mně</a></li>
-            <li><a href="projects.html" data-key="nav-projects">Projekty</a></li>
-            <li><a href="weby.html" data-key="nav-webdev">Tvorba Webů</a></li>
-            <li><a href="index.html#kontakt" data-key="nav-contact">Kontakt</a></li>
-        </ul>
-        <!-- Přepínač jazyka -->
-        <div class="language-switcher">
-            <img src="images/icons/language-icon.svg" alt="Language" id="languageIcon">
-            <ul class="language-options">
-                <li data-lang="cs">Čeština</li>
-                <li data-lang="en">English</li>
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="nav-container">
+            <div class="brand">
+                <a href="index.html#"><img src="images/lernq-logo.png" alt="Logo Lerniq" class="brand-logo"></a>
+                <span class="brand-text">Lerniq</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Domů</a></li>
+                <li><a href="index.html#about">O mně</a></li>
+                <li><a href="index.html#company">Lerniq</a></li>
+                <li><a href="index.html#projects">Projekty</a></li>
+                <li><a href="index.html#collaboration">Spolupráce</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
             </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <!-- Web Development Section -->
+    <section class="web-dev">
+        <div class="container hero">
+            <div class="hero-text" data-aos="fade-right">
+                <h1>Tvorba Webových Stránek</h1>
+                <p>Nabízíme profesionální tvorbu webů šitou na míru vašim potřebám. Vytváříme moderní, responzivní a uživatelsky přívětivé stránky, které podpoří růst vašeho podnikání nebo projektu.</p>
+                <a href="#packages" class="btn">Naše balíčky</a>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="images/webdev.png" alt="Ilustrační obrázek webového vývoje" data-tilt data-tilt-glare data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="900">
+            </div>
         </div>
-        <div class="burger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
-
-    <!-- Tvorba Webů -->
-    <section class="web-development">
-        <div class="container" data-aos="fade-up">
-            <h2 data-key="webdev-heading">Tvorba Webových Stránek</h2>
-            <p data-key="webdev-description">Nabízím profesionální tvorbu webových stránek na míru. Specializuji se na moderní, responzivní a uživatelsky přívětivé weby, které pomohou vašemu podnikání růst.</p>
-            <!-- Nová nabídka služeb -->
-            <div class="services">
-                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                    <h3 data-key="service-basic-heading">Základní Web</h3>
-                    <p data-key="service-basic-description">Jednoduchý web pro prezentaci vaší společnosti nebo projektu.</p>
-                    <p class="price">od 5 000 Kč</p>
-                    <a href="#order-form" class="btn" data-key="service-order-button">Objednat</a>
-                </div>
-                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                    <h3 data-key="service-advanced-heading">Pokročilý Web</h3>
-                    <p data-key="service-advanced-description">Web s pokročilými funkcemi a individuálním designem.</p>
-                    <p class="price">od 10 000 Kč</p>
-                    <a href="#order-form" class="btn" data-key="service-order-button">Objednat</a>
-                </div>
-                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-                    <h3 data-key="service-ecommerce-heading">E-commerce Řešení</h3>
-                    <p data-key="service-ecommerce-description">Kompletní e-shop s platebními bránami a správou objednávek.</p>
-                    <p class="price">od 20 000 Kč</p>
-                    <a href="#order-form" class="btn" data-key="service-order-button">Objednat</a>
-                </div>
+        <div id="packages" class="packages" data-aos="fade-up">
+            <div class="package-card">
+                <h3>Základní Web</h3>
+                <p>Jednoduchý a elegantní web pro prezentaci vaší společnosti nebo projektu.</p>
+                <p class="price">od 5&nbsp;000&nbsp;Kč</p>
+                <a href="index.html#contact" class="btn">Kontaktovat</a>
+            </div>
+            <div class="package-card">
+                <h3>Pokročilý Web</h3>
+                <p>Web s individuálním designem, dynamickým obsahem a interaktivními prvky.</p>
+                <p class="price">od 10&nbsp;000&nbsp;Kč</p>
+                <a href="index.html#contact" class="btn">Kontaktovat</a>
+            </div>
+            <div class="package-card">
+                <h3>E‑commerce Řešení</h3>
+                <p>Kompletní e‑shop s platebními bránami, správou objednávek a analytikou.</p>
+                <p class="price">od 20&nbsp;000&nbsp;Kč</p>
+                <a href="index.html#contact" class="btn">Kontaktovat</a>
             </div>
         </div>
     </section>
-
-    <!-- Objednávkový formulář -->
-    <section id="order-form" class="order-form">
-        <div class="container" data-aos="fade-up">
-            <h2 data-key="order-heading">Máte zájem? Kontaktujte mě!</h2>
-            <form id="webOrderForm" action="web_order.php" method="post">
-                <input type="text" name="jmeno" placeholder="Vaše Jméno" required data-key="order-name-placeholder">
-                <input type="email" name="email" placeholder="Váš Email" required data-key="order-email-placeholder">
-                <select name="typ_webu" required data-key="order-type-placeholder">
-                    <option value="" disabled selected data-key="order-type-select">Vyberte typ webu</option>
-                    <option value="Základní Web" data-key="order-type-basic">Základní Web</option>
-                    <option value="Pokročilý Web" data-key="order-type-advanced">Pokročilý Web</option>
-                    <option value="E-commerce Řešení" data-key="order-type-ecommerce">E-commerce Řešení</option>
-                </select>
-                <textarea name="pozadavky" rows="5" placeholder="Vaše požadavky" required data-key="order-requirements-placeholder"></textarea>
-                <button type="submit" class="btn" data-key="order-submit">Odeslat</button>
-            </form>
-        </div>
-    </section>
-
+    <!-- Scroll to top button -->
+    <button id="scrollToTopBtn">⇧</button>
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <img src="https://images.unsplash.com/photo-1484502249930-e1c80a6d58cf?auto=format&fit=crop&w=600&q=60" alt="Země" class="footer-image">
-            <p>&copy; 2023 Kryštof Vach. Všechna práva vyhrazena.</p>
-        </div>
+        <p>© 2025 Kryštof Vach &amp; Lerniq s.r.o. Všechna práva vyhrazena.</p>
     </footer>
-
-    <!-- Button Scroll Top -->
-    <div id="scrollTop" class="scroll-top">&#8679;</div>
-
-    <!-- Skripty -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        AOS.init({ once: true });
+    </script>
 </body>
 </html>

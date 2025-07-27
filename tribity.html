@@ -2,72 +2,71 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Tribity - Projekt</title>
-    <meta name="description" content="Detailní informace o projektu Tribity.">
-    <meta name="keywords" content="Tribity, projekt, Kryštof Vach, programování, vzdělávání">
+    <title>Tribity - Lerniq</title>
+    <meta name="description" content="Detailní informace o projektu Tribity – interaktivní platforma pro výuku programování s využitím gamifikace a umělé inteligence.">
+    <meta name="keywords" content="Tribity, Lerniq, vzdělávání, programování, projekt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link na styly -->
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <!-- AOS Animace -->
+    <!-- AOS Animations -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <!-- Fonty -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigace -->
+    <!-- Navigation -->
     <nav id="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html" data-key="nav-home">Domů</a></li>
-            <li><a href="index.html#about" data-key="nav-about">O mně</a></li>
-            <li><a href="projects.html" data-key="nav-projects">Projekty</a></li>
-            <li><a href="weby.html" data-key="nav-webdev">Tvorba Webů</a></li>
-            <li><a href="index.html#kontakt" data-key="nav-contact">Kontakt</a></li>
-        </ul>
-        <!-- Přepínač jazyka -->
-        <div class="language-switcher">
-            <img src="images/icons/language-icon.svg" alt="Language" id="languageIcon">
-            <ul class="language-options">
-                <li data-lang="cs">Čeština</li>
-                <li data-lang="en">English</li>
+        <div class="container nav-container">
+            <a href="index.html#domu" class="brand">
+                <img src="images/lernq-logo.png" alt="Lerniq Logo" class="brand-logo">
+                <span class="brand-text">Lerniq</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#domu">Domů</a></li>
+                <li><a href="index.html#about">O mně</a></li>
+                <li><a href="index.html#company">Lerniq</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="weby.html">Tvorba Webů</a></li>
+                <li><a href="index.html#collaboration">Spolupráce</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
             </ul>
-        </div>
-        <div class="burger">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </nav>
 
-    <!-- Detail projektu -->
+    <!-- Project Detail -->
     <section class="project-detail">
         <div class="container" data-aos="fade-up">
             <h2>Tribity</h2>
-            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39d?auto=format&fit=crop&w=1200&q=80" alt="Tribity" class="project-image">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39d?auto=format&fit=crop&w=1200&q=80" alt="Tribity" class="project-image" loading="lazy">
             <p>Tribity je vzdělávací platforma zaměřená na výuku programování pomocí gamifikace a umělé inteligence. Cílem projektu je zpřístupnit programování široké veřejnosti zábavnou a interaktivní formou.</p>
             <h3>Funkce a vlastnosti:</h3>
             <ul>
                 <li>Interaktivní lekce a cvičení</li>
                 <li>Gamifikace výukového procesu</li>
-                <li>Personalizované doporučení díky AI</li>
+                <li>Personalizovaná doporučení díky AI</li>
                 <li>Komunitní podpora a fórum</li>
             </ul>
-            <a href="https://tribity.app" class="btn" target="_blank">Navštívit Web</a>
+            <a href="https://tribity.app" class="btn" target="_blank" rel="noopener">Navštívit Web</a>
         </div>
     </section>
 
-    <!-- Button Scroll Top -->
+    <!-- Scroll To Top Button -->
     <div id="scrollTop" class="scroll-top">&#8679;</div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <img src="https://images.unsplash.com/photo-1484502249930-e1c80a6d58cf?auto=format&fit=crop&w=600&q=60" alt="Země" class="footer-image">
-            <p>&copy; 2023 Kryštof Vach. Všechna práva vyhrazena.</p>
+            <p>&copy; 2025 Lerniq s.r.o. Všechna práva vyhrazena.</p>
         </div>
     </footer>
 
-    <!-- Skripty -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>

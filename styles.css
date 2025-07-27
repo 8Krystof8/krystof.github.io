@@ -70,7 +70,7 @@ nav .nav-links a:hover {
     color: #ffffff;
 }
 
-/* Přepínač jazyka */
+/* Přepínač jazyka (nepoužívá se, ale ponechán pro kompatibilitu) */
 .language-switcher {
     position: relative;
     cursor: pointer;
@@ -366,7 +366,8 @@ nav .nav-links a:hover {
     backdrop-filter: blur(10px);
 }
 
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
@@ -377,7 +378,8 @@ nav .nav-links a:hover {
     border-radius: 10px;
 }
 
-.contact input::placeholder, .contact textarea::placeholder {
+.contact input::placeholder,
+.contact textarea::placeholder {
     color: #cccccc;
 }
 
@@ -408,18 +410,13 @@ nav .nav-links a:hover {
 
 .social-links a {
     margin: 0 10px;
+    color: var(--accent-color);
+    transition: transform 0.3s, color 0.3s;
 }
 
-.social-links img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s, filter 0.3s;
-    filter: brightness(0) invert(1);
-}
-
-.social-links img:hover {
+.social-links a:hover {
     transform: scale(1.1);
-    filter: brightness(0.8) invert(1);
+    color: var(--accent-color-hover);
 }
 
 /* Tlačítko pro návrat nahoru */
@@ -460,28 +457,18 @@ footer {
     text-align: center;
     color: #666666;
     overflow: hidden;
-    padding-top: 50px;
+    padding: 20px 0;
 }
 
 .footer-content {
-    padding: 20px 0;
     position: relative;
     z-index: 1;
 }
 
-.footer-image {
-    width: 100%;
-    height: auto;
-    opacity: 0.3;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
 footer p {
-    position: relative;
-    z-index: 2;
-    margin-top: 20px;
+    margin: 0;
+    color: #777777;
+    font-size: 14px;
 }
 
 /* Animace */
@@ -516,7 +503,7 @@ footer p {
         display: block;
     }
 
-    .offer-grid, .projects-grid {
+    .projects-grid {
         flex-direction: column;
     }
 
@@ -527,11 +514,346 @@ footer p {
     .hero p {
         font-size: 16px;
     }
+}
 
-    /* Přepínač jazyka v mobilní verzi */
-    .language-switcher {
-        position: absolute;
-        top: 15px;
-        right: 60px;
+/* =================== Custom additions for Lerniq site =================== */
+
+/* Container for navigation elements */
+.nav-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand styling */
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.brand-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+/* Company Section */
+.company {
+    padding: 100px 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.company h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.company-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.company-text {
+    flex: 1 1 60%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.company-logo img {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,188,212,0.3);
+}
+
+/* Collaboration Section */
+.collaboration {
+    padding: 100px 50px;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.collaboration h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+}
+
+.collaboration p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.partner-logos img {
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.partner-logos img:hover {
+    opacity: 1;
+}
+
+/* Projects Section modifications */
+.all-projects-btn {
+    display: inline-block;
+    margin-top: 40px;
+}
+
+/* Responsive adjustments for custom sections */
+@media screen and (max-width: 768px) {
+    .company-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .company-logo img {
+        margin: 0 auto;
+    }
+}
+
+/*------------------------------------------------------*/
+/* Web Development Page Styles                           */
+/* These classes are used on the dedicated page for      */
+/* presenting web‑development services. They support      */
+/* responsive layouts, glass cards for pricing plans and */
+/* polished hover effects.                              */
+/*------------------------------------------------------*/
+
+.web-dev {
+    padding: 100px 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.web-dev .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.web-dev .hero-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.web-dev .hero-text h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.web-dev .hero-text p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.web-dev .hero-image {
+    flex: 1;
+    max-width: 420px;
+}
+
+.web-dev .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.web-dev .packages {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+.package-card {
+    background: var(--glass-bg);
+    border-radius: 16px;
+    padding: 40px 25px;
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.package-card h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.package-card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.package-card .price {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.package-card .btn {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.package-card .btn:hover {
+    background-color: var(--accent-color-hover);
+}
+
+/* Responsive adjustments for the pricing cards */
+@media screen and (max-width: 992px) {
+    .package-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .package-card {
+        flex: 1 1 100%;
+    }
+}
+
+/*------------------------------------------------------*/
+/* Project Detail Pages Styles                          */
+/* These styles are used for individual project pages,   */
+/* such as Smart Bin and Chytré Podlahy. They provide    */
+/* a split layout with image and feature list.           */
+/*------------------------------------------------------*/
+
+.project-detail {
+    padding: 100px 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.project-detail h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+}
+
+.project-detail p {
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.detail-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.detail-image {
+    flex: 1;
+    max-width: 480px;
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.detail-text {
+    flex: 1;
+}
+
+.detail-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.detail-text ul {
+    list-style: disc inside;
+    margin-bottom: 20px;
+}
+
+.detail-text li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.detail-text .btn {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.detail-text .btn:hover {
+    background-color: var(--accent-color-hover);
+}
+
+@media screen and (max-width: 768px) {
+    .detail-content {
+        flex-direction: column;
+    }
+    .detail-image,
+    .detail-text {
+        width: 100%;
+    }
+    .detail-image {
+        order: 2;
+    }
+    .detail-text {
+        order: 1;
     }
 }

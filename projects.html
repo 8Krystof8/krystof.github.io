@@ -2,84 +2,82 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title data-key="title">Projekty - Kryštof Vach</title>
-    <meta name="description" content="Prozkoumejte projekty Kryštofa Vacha, včetně Tribity a dalších." data-key="meta-description">
-    <meta name="keywords" content="Kryštof Vach, projekty, Tribity, technologie">
+    <title>Projekty - Lerniq</title>
+    <meta name="description" content="Prozkoumejte projekty společnosti Lerniq s.r.o., včetně Tribity, Chytré Podlahy a Smart Bin.">
+    <meta name="keywords" content="Lerniq, projekty, Tribity, Chytré Podlahy, Smart Bin, technologie">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link na styly -->
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <!-- AOS Animace -->
+    <!-- AOS Animations -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <!-- Fonty -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigace -->
+    <!-- Navigation -->
     <nav id="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html" data-key="nav-home">Domů</a></li>
-            <li><a href="index.html#about" data-key="nav-about">O mně</a></li>
-            <li><a href="projects.html" data-key="nav-projects">Projekty</a></li>
-            <li><a href="weby.html" data-key="nav-webdev">Tvorba Webů</a></li>
-            <li><a href="index.html#kontakt" data-key="nav-contact">Kontakt</a></li>
-        </ul>
-        <!-- Přepínač jazyka -->
-        <div class="language-switcher">
-            <img src="images/icons/language-icon.svg" alt="Language" id="languageIcon">
-            <ul class="language-options">
-                <li data-lang="cs">Čeština</li>
-                <li data-lang="en">English</li>
+        <div class="container nav-container">
+            <a href="index.html#domu" class="brand">
+                <img src="images/lernq-logo.png" alt="Lerniq Logo" class="brand-logo">
+                <span class="brand-text">Lerniq</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#domu">Domů</a></li>
+                <li><a href="index.html#about">O mně</a></li>
+                <li><a href="index.html#company">Lerniq</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="weby.html">Tvorba Webů</a></li>
+                <li><a href="index.html#collaboration">Spolupráce</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
             </ul>
-        </div>
-        <div class="burger">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </nav>
 
-    <!-- Button Scroll Top -->
+    <!-- Scroll To Top Button -->
     <div id="scrollTop" class="scroll-top">&#8679;</div>
 
     <!-- Projekty -->
     <section class="projects">
-        <h2 data-aos="fade-right" data-key="projects-heading">Moje Projekty</h2>
+        <h2 data-aos="fade-right">Naše Projekty</h2>
         <div class="projects-grid">
             <!-- Projekt 1 -->
             <div class="project-item" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=60" alt="Tribity" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=60" alt="Tribity" loading="lazy">
                 <h3>Tribity</h3>
-                <p data-key="project-tribity-description">Tribity je vzdělávací platforma zaměřená na výuku programování pomocí gamifikace a umělé inteligence.</p>
-                <a href="tribity.html" class="btn" data-key="project-more-info">Více Info</a>
+                <p>Interaktivní platforma pro výuku programování pomocí gamifikace a AI.</p>
+                <a href="tribity.html" class="btn">Více Info</a>
             </div>
             <!-- Projekt 2 -->
             <div class="project-item" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://images.unsplash.com/photo-1585843277411-6613afc64e81?auto=format&fit=crop&w=600&q=60" alt="Chytré Podlahy" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1585843277411-6613afc64e81?auto=format&fit=crop&w=600&q=60" alt="Chytré Podlahy" loading="lazy">
                 <h3>Chytré Podlahy</h3>
                 <p>Systém chytrých podlah pro interaktivní sledování pohybu.</p>
-                <a href="chytre-podlahy.html" class="btn" data-key="project-more-info">Více Info</a>
+                <a href="chytre-podlahy.html" class="btn">Více Info</a>
             </div>
             <!-- Projekt 3 -->
             <div class="project-item" data-aos="fade-up" data-aos-delay="300">
-            <img src="https://images.unsplash.com/photo-1586771107445-d18d1d82fa1d?auto=format&fit=crop&w=600&q=60" alt="Smart Bin" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1586771107445-d18d1d82fa1d?auto=format&fit=crop&w=600&q=60" alt="Smart Bin" loading="lazy">
                 <h3>Smart Bin</h3>
                 <p>Chytrý koš pro automatické třídění odpadu.</p>
-                <a href="smart-bin.html" class="btn" data-key="project-more-info">Více Info</a>
+                <a href="smart-bin.html" class="btn">Více Info</a>
             </div>
-            <!-- Přidej další projekty podle potřeby -->
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <img src="https://images.unsplash.com/photo-1484502249930-e1c80a6d58cf?auto=format&fit=crop&w=600&q=60" alt="Země" class="footer-image">
-            <p>&copy; 2023 Kryštof Vach. Všechna práva vyhrazena.</p>
+            <p>&copy; 2025 Lerniq s.r.o. Všechna práva vyhrazena.</p>
         </div>
     </footer>
 
-    <!-- Skripty -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>

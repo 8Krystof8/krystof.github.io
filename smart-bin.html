@@ -2,64 +2,75 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Smart Bin - Projekt</title>
-    <meta name="description" content="Detailní informace o projektu Smart Bin.">
-    <meta name="keywords" content="smart bin, chytrý koš, Kryštof Vach">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bin – Projekt – Kryštof Vach &amp; Lerniq s.r.o.</title>
+    <meta name="description" content="Smart Bin je inteligentní koš pro efektivní třídění odpadu. Automatické rozpoznání odpadu, notifikace o zaplnění a statistiky v mobilní aplikaci.">
+    <meta name="keywords" content="Smart Bin, chytrý koš, třídění odpadu, projekt, Lerniq">
+    <meta property="og:title" content="Smart Bin – Projekt Lerniq">
+    <meta property="og:description" content="Automatické rozpoznání odpadu, notifikace o zaplnění a statistiky v mobilní aplikaci. Součást inovativních projektů Lerniq.">
+    <meta property="og:image" content="images/smart-bin.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/lernq-logo.png">
     <link rel="stylesheet" href="styles.css">
+    <!-- AOS and Vanilla Tilt -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 </head>
 <body>
-    <nav id="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html" data-key="nav-home">Domů</a></li>
-            <li><a href="index.html#about" data-key="nav-about">O mně</a></li>
-            <li><a href="projects.html" data-key="nav-projects">Projekty</a></li>
-            <li><a href="weby.html" data-key="nav-webdev">Tvorba Webů</a></li>
-            <li><a href="index.html#kontakt" data-key="nav-contact">Kontakt</a></li>
-        </ul>
-        <div class="language-switcher">
-            <img src="images/icons/language-icon.svg" alt="Language" id="languageIcon">
-            <ul class="language-options">
-                <li data-lang="cs">Čeština</li>
-                <li data-lang="en">English</li>
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="nav-container">
+            <div class="brand">
+                <a href="index.html#"><img src="images/lernq-logo.png" alt="Logo Lerniq" class="brand-logo"></a>
+                <span class="brand-text">Lerniq</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Domů</a></li>
+                <li><a href="index.html#about">O mně</a></li>
+                <li><a href="index.html#company">Lerniq</a></li>
+                <li><a href="index.html#projects">Projekty</a></li>
+                <li><a href="index.html#collaboration">Spolupráce</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
             </ul>
-        </div>
-        <div class="burger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
-
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <!-- Project Detail: Smart Bin -->
     <section class="project-detail">
-        <div class="container" data-aos="fade-up">
-            <h2>Smart Bin</h2>
-            <img src="https://images.unsplash.com/photo-1586771107445-d18d1d82fa1d?auto=format&fit=crop&w=600&q=60" alt="Smart Bin" class="project-image">
-            <p>Smart Bin je řešení pro efektivní třídění odpadu. Díky vestavěným senzorům a AI rozpozná druh odpadu a přesměruje jej do správné nádoby.</p>
-            <h3>Funkce a vlastnosti:</h3>
-            <ul>
-                <li>Automatické rozeznání odpadu</li>
-                <li>Notifikace o zaplnění</li>
-                <li>Statistiky v mobilní aplikaci</li>
-            </ul>
+        <div class="container">
+            <h1 data-aos="fade-down">Smart Bin</h1>
+            <p data-aos="fade-down" data-aos-delay="100">Smart Bin je řešení pro efektivní třídění odpadu. Díky vestavěným senzorům a algoritmům umělé inteligence rozpozná druh odpadu a přesměruje jej do správné nádoby. Projekt je součástí iniciativ Lerniq zaměřených na udržitelnost a inovace.</p>
+            <div class="detail-content">
+                <div class="detail-image" data-aos="fade-right" data-aos-delay="200">
+                    <img src="images/smart-bin.png" alt="Ilustrační obrázek Smart Bin" data-tilt data-tilt-glare data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="900">
+                </div>
+                <div class="detail-text" data-aos="fade-left" data-aos-delay="200">
+                    <h3>Funkce a vlastnosti</h3>
+                    <ul>
+                        <li>Automatické rozeznání odpadu pomocí senzorů a AI</li>
+                        <li>Notifikace o zaplnění jednotlivých nádob</li>
+                        <li>Statistiky a přehledy v mobilní aplikaci</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn">Chci spolupracovat</a>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Button Scroll Top -->
-    <div id="scrollTop" class="scroll-top">&#8679;</div>
-
+    <!-- Scroll to top -->
+    <button id="scrollToTopBtn">⇧</button>
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <img src="https://images.unsplash.com/photo-1484502249930-e1c80a6d58cf?auto=format&fit=crop&w=600&q=60" alt="Země" class="footer-image">
-            <p>&copy; 2023 Kryštof Vach. Všechna práva vyhrazena.</p>
-        </div>
+        <p>© 2025 Kryštof Vach &amp; Lerniq s.r.o. Všechna práva vyhrazena.</p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        AOS.init({ once: true });
+    </script>
 </body>
 </html>

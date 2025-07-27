@@ -2,34 +2,33 @@
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 
-burger.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-});
+if (burger && navLinks) {
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
+    });
+}
 
-// Hladké scrollování
+// Smooth scrolling to internal sections
 const navLinksItems = document.querySelectorAll('.nav-links a');
-
 navLinksItems.forEach(link => {
     link.addEventListener('click', (e) => {
-        if (link.hash !== "" && link.pathname === window.location.pathname) {
+        if (link.hash && link.pathname === window.location.pathname) {
             e.preventDefault();
-            const hash = link.hash;
-
-            document.querySelector(hash).scrollIntoView({
-                behavior: 'smooth'
-            });
-
+            const target = document.querySelector(link.hash);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+            // close mobile menu if open
             navLinks.classList.remove('nav-active');
             burger.classList.remove('toggle');
         }
     });
 });
 
-// Navigační lišta změna velikosti při scrollování
+// Navbar shrink on scroll
 const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
     } else {
@@ -52,10 +51,10 @@ if (scrollTopBtn) {
     });
 }
 
-// Validace kontaktního formuláře
+// Contact form validation
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
         let valid = true;
         const name = this.jmeno.value.trim();
         const email = this.email.value.trim();
@@ -79,10 +78,10 @@ if (contactForm) {
     });
 }
 
-// Validace objednávkového formuláře
+// Web order form validation (used on weby.html)
 const webOrderForm = document.getElementById('webOrderForm');
 if (webOrderForm) {
-    webOrderForm.addEventListener('submit', function(e) {
+    webOrderForm.addEventListener('submit', function (e) {
         let valid = true;
         const name = this.jmeno.value.trim();
         const email = this.email.value.trim();
@@ -97,7 +96,7 @@ if (webOrderForm) {
             alert('Prosím, zadejte platný email.');
             valid = false;
         }
-        if (type === '') {
+        if (!type) {
             alert('Prosím, vyberte typ webu.');
             valid = false;
         }
@@ -111,83 +110,25 @@ if (webOrderForm) {
     });
 }
 
+// Email validation helper
 function validateEmail(email) {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
 
-// Inicializace AOS
+// Inicializace AOS animací
 AOS.init({
     duration: 1000,
     easing: 'ease-in-out',
-    once: true
+    once: true,
 });
 
-// Tilt efekt pro projekty
+// Inicializace VanillaTilt pro projektové karty
 if (typeof VanillaTilt !== 'undefined') {
     VanillaTilt.init(document.querySelectorAll('.project-item'), {
         max: 15,
         speed: 300,
         glare: true,
-        'max-glare': 0.2
+        'max-glare': 0.2,
     });
 }
-
-// Jazykové proměnné
-let currentLang = localStorage.getItem('language') || 'cs';
-const languageIcon = document.getElementById('languageIcon');
-const languageOptions = document.querySelector('.language-options');
-
-// Přepnutí jazyka
-languageIcon.addEventListener('click', () => {
-    languageOptions.classList.toggle('show');
-});
-
-languageOptions.addEventListener('click', (e) => {
-    if (e.target.tagName === 'LI') {
-        const selectedLang = e.target.getAttribute('data-lang');
-        setLanguage(selectedLang);
-        languageOptions.classList.remove('show');
-    }
-});
-
-// Načtení jazykových souborů
-function setLanguage(lang) {
-    fetch(`lang/${lang}.json`)
-        .then(response => response.json())
-        .then(data => {
-            currentLang = lang;
-            localStorage.setItem('language', lang);
-            document.querySelectorAll('[data-key]').forEach(element => {
-                const key = element.getAttribute('data-key');
-                if (data[key]) {
-                    element.innerHTML = data[key];
-                }
-            });
-            document.documentElement.lang = lang;
-
-            // Aktualizace placeholderů
-            document.querySelectorAll('input, textarea, select').forEach(element => {
-                const key = element.getAttribute('data-key');
-                if (data[key]) {
-                    element.placeholder = data[key];
-                }
-                if (element.tagName === 'SELECT') {
-                    element.options.forEach(option => {
-                        const optionKey = option.getAttribute('data-key');
-                        if (data[optionKey]) {
-                            option.textContent = data[optionKey];
-                        }
-                    });
-                }
-            });
-        });
-}
-
-// Načtení výchozího jazyka
-setLanguage(currentLang);
-
-// Uložení zvoleného jazyka při změně stránky
-window.addEventListener('load', () => {
-    setLanguage(currentLang);
-});
