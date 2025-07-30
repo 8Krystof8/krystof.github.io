@@ -17,6 +17,12 @@
     --glass-bg: rgba(255, 255, 255, 0.1);
 }
 
+body.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #0d0d0d;
+    --glass-bg: rgba(0, 0, 0, 0.05);
+}
+
 /* Tělo stránky */
 body {
     font-family: 'Roboto', sans-serif;
@@ -67,6 +73,21 @@ nav .nav-links a {
 }
 
 nav .nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.theme-toggle:hover {
     color: #ffffff;
 }
 
@@ -160,11 +181,11 @@ nav .nav-links a:hover {
     margin-bottom: 20px;
     font-weight: 700;
     line-height: 1.2;
+    background: linear-gradient(90deg, var(--accent-color), #ff00cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero h1 .highlight {
-    color: var(--accent-color);
-}
 
 .btn {
     display: inline-block;

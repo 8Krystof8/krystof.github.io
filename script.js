@@ -51,6 +51,22 @@ if (scrollTopBtn) {
     });
 }
 
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        themeToggle.textContent = isLight ? '🌙' : '☀️';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+}
+
 // Contact form validation
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
