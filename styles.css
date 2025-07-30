@@ -14,13 +14,13 @@
     --text-color: #e6e6e6;
     --accent-color: #00bcd4; /* Fresh cyan */
     --accent-color-hover: #0097a7;
-    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.25); /* clearer glass effect */
 }
 
 body.light-mode {
     --bg-color: #ffffff;
     --text-color: #0d0d0d;
-    --glass-bg: rgba(0, 0, 0, 0.05);
+    --glass-bg: rgba(0, 0, 0, 0.15);
 }
 
 /* Tělo stránky */
@@ -148,6 +148,18 @@ nav .nav-links a:hover {
     transition: all 0.3s ease;
 }
 
+.burger.toggle div:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.toggle div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.toggle div:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Hero Sekce */
 .hero {
     height: 100vh;
@@ -164,7 +176,7 @@ nav .nav-links a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(13,13,13,0.9) 0%, rgba(26,26,26,0.6) 100%);
+    background: linear-gradient(135deg, rgba(13,13,13,0.8) 0%, rgba(26,26,26,0.4) 100%);
 }
 
 .hero-content {
@@ -173,7 +185,7 @@ nav .nav-links a:hover {
     transform: translateY(-50%);
     text-align: center;
     color: #ffffff;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeSlideIn 1s ease-out 0.3s both;
 }
 
 .hero h1 {
@@ -502,18 +514,35 @@ footer p {
     }
 }
 
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responzivní design */
 @media screen and (max-width: 768px) {
     nav .nav-links {
-        display: none;
+        position: fixed;
         flex-direction: column;
-        background-color: rgba(13, 13, 13, 0.95);
-        position: absolute;
+        background-color: rgba(13, 13, 13, 0.85);
         top: 60px;
-        right: 0;
+        right: -100%;
         width: 200px;
+        height: calc(100vh - 60px);
+        padding-top: 20px;
+        transition: right 0.3s ease;
         border-left: 1px solid #333333;
         border-bottom-left-radius: 15px;
+    }
+
+    nav .nav-links.nav-active {
+        right: 0;
     }
 
     nav .nav-links li {
